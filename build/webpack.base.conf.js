@@ -1,7 +1,8 @@
-var path = require('path')
-var config = require('../config')
-var utils = require('./utils')
-var projectRoot = path.resolve(__dirname, '../')
+var path = require('path');
+var config = require('../config');
+var utils = require('./utils');
+var projectRoot = path.resolve(__dirname, '../');
+var webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -70,12 +71,20 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url',
         query: {
-          limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-          //limit: 50000,
-          //name: utils.assetsPath('fonts/[path].[name].[ext]')
+          // limit: 10000,
+          // name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          limit: 50000,
+          name: utils.assetsPath('fonts/[path].[name].[ext]')
         }
       }
+    ],
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        jquery: 'jquery'
+      })
     ]
   },
   eslint: {
