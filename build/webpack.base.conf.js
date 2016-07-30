@@ -72,6 +72,8 @@ module.exports = {
         query: {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          //limit: 50000,
+          //name: utils.assetsPath('fonts/[path].[name].[ext]')
         }
       }
     ]
