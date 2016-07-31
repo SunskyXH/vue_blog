@@ -60,7 +60,7 @@ module.exports = {
         loader: 'vue-html'
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg|ico)(\?.*)?$/,
         loader: 'url',
         query: {
           limit: 10000,
@@ -71,10 +71,10 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url',
         query: {
-          // limit: 10000,
-          // name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-          limit: 50000,
-          name: utils.assetsPath('fonts/[path].[name].[ext]')
+           limit: 10000,
+           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          //limit: 50000,
+          //name: utils.assetsPath('fonts/[path].[name].[ext]')
         }
       }
     ],
