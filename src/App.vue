@@ -1,8 +1,7 @@
 <template>
   <div class="container1">
+    <div id="wrap">
       <navbar> </navbar>
-
-    <div class="container">
       <blog> </blog>
     </div>
   </div>
@@ -28,4 +27,9 @@ export default {
   body {
     background-color: #eee;
   }
+
+  a:hover,a:link {
+    text-decoration: none;
+  }
+
 </style>

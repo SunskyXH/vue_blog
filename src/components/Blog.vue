@@ -1,23 +1,21 @@
 <template>
-  <div class="row">
-    <div class="col-sm-8 blog-main">
+  <br><br>
+  <div class="outer">
+    <div class="container">
+      <div class="row">
+    <div class="col-sm-9 blog-main">
       <div class="blog-post">
-        <h2 class="blog-post-title">Sample blog post</h2>
-        <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-
-        <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-        <hr>
-        <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+        <h2 class="blog-post-title">{{blog_title}}</h2>
+        <p class="blog-post-meta"><span class="glyphicon glyphicon-calendar"> </span> {{blog_publishtime}}</p>
+        <p>暑假利用闲的没事干的时间，接触了一些前端mv*框架，其中<code>vue.js</code>就是我最先开始学习的框架</p>
+        <h3>为什么选用vue?</h3>
+        <p>轻量,简便</p>
+        <h3>使用vue-cli来部署整个项目</h3>
+        <pre><code>$ npm install -g -vue-cli<br>$ vue init webpack my-project<br>$ cd my-project<br>$ npm install<br>$ npm run dev</code></pre>
         <blockquote>
-          <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <p>webpack相关：</p>
+          <p><small>其实我根本不会</small></p>
         </blockquote>
-        <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-        <h2>Heading</h2>
-        <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-        <h3>Sub-heading</h3>
-        <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        <pre><code>Example code block</code></pre>
-        <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
         <h3>Sub-heading</h3>
         <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <ul>
@@ -33,7 +31,7 @@
         </ol>
         <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
       </div><!-- /.blog-post -->
-
+<hr>
       <div class="blog-post">
         <h2 class="blog-post-title">Another blog post</h2>
         <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
@@ -68,27 +66,35 @@
       </nav>
 
     </div><!-- /.blog-main -->
-    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+    <div class="col-sm-3  blog-sidebar">
       <div class="sidebar-module sidebar-module-inset">
-        <h4>关于</h4>
-        <p>我也不知道这是拿来干啥的</p>
+        <h4>分类</h4>
+        <p>学习笔记</p>
+        <ol class="list-unstyled">
+          <li><a href="#">vue.js</a></li>
+        </ol>
+        <ol class="list-unstyled">
+        <p>开发笔记</p>
+          <li><a href="#">JavaScript优化</a></li>
+          <li><a href="#">微信Oauth授权</a></li>
+        </ol>
       </div>
-      <div class="sidebar-module">
+      <div class="sidebar-module sidebar-module-inset">
         <h4>归档</h4>
         <ol class="list-unstyled">
           <li><a href="#">没有快滚</a></li>
         </ol>
       </div>
-      <div class="sidebar-module">
+      <div class="sidebar-module sidebar-module-inset">
         <h4>链接</h4>
         <ol class="list-unstyled">
-          <li><a href="https://github.com/SunskyXH">GitHub</a></li>
-          <li><a href="https://twitter.com/sanctussunsky">Twitter</a></li>
-          <li><a href="https://www.facebook.com/profile.php?id=100004513845502">Facebook</a></li>
+          <li><a href="https://miria.moe">ChionLab</a></li>
         </ol>
       </div>
     </div><!-- /.blog-sidebar -->
   </div><!-- /.row -->
+    </div>
+  </div>
 </template>
 <style>
   /*
@@ -188,6 +194,9 @@
 
   .blog-post {
     margin-bottom: 60px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
   }
   .blog-post-title {
     margin-bottom: 5px;
@@ -215,19 +224,12 @@
     margin-bottom: 0;
   }
 
-  .bs-docs-header {
-    position: relative;
-    padding: 30px 0;
-    color: #cdbfe3;
-    text-shadow: 0 1px 0 rgba(0,0,0,.1);
-    background-color: #6f5499;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    font-size: 24px;
-    text-align: left;
-    margin-bottom: 40px;
-    background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
-    background-repeat: repeat-x;
+  pre {
+    background-color: #eee;
+  }
+
+  blockquote {
+    border-left: 3px solid #D0E5F2;
   }
 
 </style>
@@ -235,6 +237,8 @@
   export default {
     data () {
       return {
+        'blog_title': '用vue-cli构建web项目',
+        'blog_publishtime': '2016/7/27'
       }
     }
   }
