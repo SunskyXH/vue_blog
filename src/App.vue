@@ -2,17 +2,30 @@
   <div class="container1">
     <div id="wrap">
       <navbar> </navbar>
-      <blog> </blog>
+      <br>
+      <div class="outer">
+        <div class="container">
+          <div class="row">
+            <blog v-if="$route.path === '/'" transition="slide"></blog>
+            <about v-if="$route.path === '/about'" transition="slide"></about>
+            <sidebar> </sidebar>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import Navbar from './components/Navbar'
 import Blog from './components/Blog'
+import About from './components/About'
+import Sidebar from './components/Sidebar'
 export default {
   components: {
     Navbar,
-    Blog
+    Blog,
+    About,
+    Sidebar
   }
 }
 </script>
@@ -32,4 +45,12 @@ export default {
     text-decoration: none;
   }
 
+  .expand2-transition {
+    transition: all .5s ease;
+  }
+
+  .expand2-enter, .expand2-leave {
+    padding: 0 0;
+    opacity: 0;
+  }
 </style>
