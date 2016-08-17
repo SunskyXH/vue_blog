@@ -1,5 +1,5 @@
 <template>
-  <div class=" col-sm-9">
+  <div class="am-u-sm-9">
           <div class="article-entry blog-post">
             <h1>关于我</h1>
             <div style="text-align: center; width: 100%">
@@ -10,20 +10,22 @@
             </div>
             <table>
               <tr>
-                <td>Github:</td>
+                <td><i class="am-icon-github am-icon-fw"></i> GitHub:</li></td>
                 <td><a href="https://github.com/SunskyXH" target="_blank" rel="external">SunskyXH</a></td>
               </tr>
               <tr>
-                <td>Email:</td>
-                <td><a href="#" target="_blank" rel="external">SunskyXH@Gmail.com</a>,<a href=#>y445360776@qq.com</a></td>
+                <td><i class="am-icon-envelope am-icon-fw"></i> E-mails:</li></td>
+                <td><a href="#" target="_blank" rel="external">SunskyXH@Gmail.com</a>, <a href=#>y445360776@qq.com</a></td>
               </tr>
               <tr>
-                <td>Facebook:</td>
-                <td><a href="#" target="_blank" rel="external">Link</a></td>
-              </tr>
-              <tr>
-                <td>Twitter:</td>
-                <td><a href="#" target="_blank" rel="external">Link</a> </td>
+                <td>Others:</td>
+                <td>
+                  <a href="##" class="am-icon-btn am-secondary am-icon-twitter"></a>
+                  <a href="##" class="am-icon-btn am-primary am-icon-facebook"></a>
+                  <a href="##" class="am-icon-btn am-warning am-icon-weibo"></a>
+                  <a href="##" class="am-icon-btn am-danger am-icon-google-plus"></a>
+                  <a href="##" class="am-icon-btn am-primary am-icon-steam"></a>
+                </td>
               </tr>
             </table>
             <p>

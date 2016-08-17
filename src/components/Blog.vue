@@ -1,14 +1,18 @@
 <template>
-  <div class=" col-sm-9 blog-main">
+  <div class=" am-u-sm-9 blog-main">
+
   <div class="blog-post" v-for="blog in blogs">
+  <ol class="am-breadcrumb am-breadcrumb-slash">
+          <li><a href="#" class="am-icon-home"> {{blog.cat1}} </a></li>
+          <li><a href="#"> {{blog.cat2}}</a></li>
+          </ol>
         <h2 class="blog-post-title">{{blog.title}}</h2>
         <p class="blog-post-meta">
-          <span class="glyphicon glyphicon-calendar"> </span> {{blog.date}}
-          &nbsp;&nbsp;&nbsp;
-          <span class="glyphicon glyphicon-bookmark"> </span> <a href="#"> {{blog.cat1}} </a> ► <a href="#"> {{blog.cat2}}</a> </p>
+          <span class="am-icon-calendar"> </span> {{blog.date}}
+        </p>
           {{{blog.content}}}
         <hr>
-        <p> <span class="glyphicon glyphicon-tags"> </span> &nbsp;<span v-for="tag of blog.tags"><span class="label label-success">{{tag}}</span> </span> <a style="float: right;" ><span class="glyphicon glyphicon-option-vertical"> </span> </a> <p>
+        <p> <span class="am-icon-tags"> </span> &nbsp;<span v-for="tag of blog.tags"><span class="am-badge am-badge-secondary am-round">{{tag}}</span> </span> <a style="float: right;" ><span class="glyphicon glyphicon-option-vertical"> </span> </a> <p>
   </div>
     </div>
 </template>
@@ -158,7 +162,11 @@
 
 </style>
 <script>
+  var amButton = require('amazeui-vue').button
   export default {
+    components: {
+      'amButton': amButton
+    },
     ready () {
       this.$http.get('http://localhost:8888/get_articles')
         .then(function (ret) {

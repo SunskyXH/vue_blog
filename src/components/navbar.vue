@@ -16,9 +16,9 @@
         <nav id="main-nav">
           <a id="main-nav-toggle" class="nav-icon"> </a>
           <a class="main-nav-link" v-link="'/'"><img id="ico" alt="Brand" src="../assets/bonfire.png"></a>
-          <a class="main-nav-link" v-link="'/'">Bonfire</a>
-          <a class="main-nav-link" v-link="'/about'">About me</a>
-          <a class="main-nav-link" href="http://github.com/SunskyXH">Github</a>
+          <a class="main-nav-link" v-link="'/'"><i class="am-icon-home am-icon-fw"></i> Bonfire</li></a>
+          <a class="main-nav-link" v-link="'/about'"><i class="am-icon-user am-icon-fw"></i> About me</li></a>
+          <a class="main-nav-link" href="http://github.com/SunskyXH"><i class="am-icon-github am-icon-fw"></i> GitHub</li></a>
         </nav>
         <nav id="sub-nav">
           <span  v-if="show" transition="expand">

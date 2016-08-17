@@ -5,7 +5,7 @@
       <br>
       <div class="outer">
         <div class="container">
-          <div class="row">
+          <div class="am-g">
             <blog v-if="$route.path === '/'" transition="slide"></blog>
             <about v-if="$route.path === '/about'" transition="slide"></about>
             <sidebar> </sidebar>
