@@ -22,6 +22,9 @@ router.map({
   },
   '/about': {
     component: App
+  },
+  '/add': {
+    component: App
   }
 })
 

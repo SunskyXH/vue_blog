@@ -18,13 +18,24 @@
                 <td><a href="#" target="_blank" rel="external">SunskyXH@Gmail.com</a>, <a href=#>y445360776@qq.com</a></td>
               </tr>
               <tr>
-                <td>Others:</td>
+                <td><i class="am-icon-rocket am-icon-fw"></i> Others:</td>
                 <td>
-                  <a href="##" class="am-icon-btn am-secondary am-icon-twitter"></a>
-                  <a href="##" class="am-icon-btn am-primary am-icon-facebook"></a>
-                  <a href="##" class="am-icon-btn am-warning am-icon-weibo"></a>
-                  <a href="##" class="am-icon-btn am-danger am-icon-google-plus"></a>
-                  <a href="##" class="am-icon-btn am-primary am-icon-steam"></a>
+                  <a href="https://twitter.com/sanctussunsky" class="am-icon-btn am-secondary am-icon-twitter"></a>
+                  <a href="https://www.facebook.com/profile.php?id=100004513845502" class="am-icon-btn am-primary am-icon-facebook"></a>
+                  <a href="http://www.weibo.com/2864813750/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" class="am-icon-btn am-warning am-icon-weibo"></a>
+                  <a href="https://plus.google.com/117776372494154423647" class="am-icon-btn am-danger am-icon-google-plus"></a>
+                  <a href="http://steamcommunity.com/profiles/76561198088762437/" class="am-icon-btn am-primary am-icon-steam"></a>
+                </td>
+              </tr>
+              <tr>
+                <td><i class="am-icon-magic am-icon-fw"></i> Skills:</td>
+                <td>
+                  <i class="am-icon-git am-icon-fw"></i>
+                  <i class="am-icon-linux am-icon-fw"></i>
+                  <i class="am-icon-html5 am-icon-fw"></i>
+                  <i class="am-icon-css3 am-icon-fw"></i>
+                  <i class="am-icon-database am-icon-fw"></i>
+                  /*以上内容其实都不会*/
                 </td>
               </tr>
             </table>

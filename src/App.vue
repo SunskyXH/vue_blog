@@ -8,6 +8,7 @@
           <div class="am-g">
             <blog v-if="$route.path === '/'" transition="slide"></blog>
             <about v-if="$route.path === '/about'" transition="slide"></about>
+            <add v-if="$route.path === 'add'" transition="slide"></add>
             <sidebar> </sidebar>
           </div>
         </div>

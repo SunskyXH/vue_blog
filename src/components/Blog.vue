@@ -12,7 +12,7 @@
         </p>
           {{{blog.content}}}
         <hr>
-        <p> <span class="am-icon-tags"> </span> &nbsp;<span v-for="tag of blog.tags"><span class="am-badge am-badge-secondary am-round">{{tag}}</span> </span> <a style="float: right;" ><span class="glyphicon glyphicon-option-vertical"> </span> </a> <p>
+        <p> <span class="am-icon-tags"> </span> &nbsp;<span v-for="tag of blog.tags"><span class="am-badge am-badge-secondary am-round">{{tag}}</span> </span><p>
   </div>
     </div>
 </template>

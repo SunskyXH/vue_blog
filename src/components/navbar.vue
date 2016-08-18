@@ -22,11 +22,12 @@
         </nav>
         <nav id="sub-nav">
           <span  v-if="show" transition="expand">
-            <add v-if="logstatus" > </add>
-            <a class="main-nav-link" @click="login()" v-if="!logstatus"><span class="glyphicon glyphicon-log-in"> </span></a>
-            <a class="main-nav-link" @click="logout()" v-if="logstatus"><span class="glyphicon glyphicon-log-out"> </span></a>
+            <a class="main-nav-link am-icon-rss" href="#" v-if="logstatus"></a>
+            <a class="main-nav-link am-icon-pencil" v-if="logstatus" v-link="'/add'"></a>
+            <a class="main-nav-link" @click="login()" v-if="!logstatus"><span class="am-icon-sign-in"> </span></a>
+            <a class="main-nav-link" @click="logout()" v-if="logstatus"><span class="am-icon-sign-out"> </span></a>
           </span>
-          <a class="main-nav-link" @click="showExpand()"><span v-if="!show" class="glyphicon glyphicon-chevron-left"> </span><span v-if="show" class="glyphicon glyphicon-chevron-right"> </span></a>
+          <a class="main-nav-link" @click="showExpand()"><span v-if="!show" class="am-icon-reorder"> </span><span v-if="show" class="am-icon-remove"> </span></a>
           <a class="main-nav-link" href="http://vuejs.org"><img id="vuelogo" src="../assets/logo.png" ></a>
 
         </nav>
