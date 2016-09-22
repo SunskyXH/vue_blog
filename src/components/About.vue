@@ -1,5 +1,6 @@
 <template>
-  <div class="am-u-sm-9">
+  <div>
+          <br>
           <div class="article-entry blog-post">
             <h1>关于我</h1>
             <div style="text-align: center; width: 100%">
@@ -61,4 +62,7 @@
   }
 </style>
 <script>
+export default {
+  name: 'navbar'
+}
 </script>

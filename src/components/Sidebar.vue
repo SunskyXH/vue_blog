@@ -1,5 +1,6 @@
 <template>
-  <div class="am-u-sm-3  blog-sidebar">
+  <div class="blog-sidebar">
+    <br>
     <div class="sidebar-module sidebar-module-inset">
       <h4>分类</h4>
       <p>学习笔记</p>
@@ -46,11 +47,11 @@
   .sidebar-module-inset ol:last-child {
     margin-bottom: 0;
   }
-  a {
+  /*a {
     color: #009a61;
     text-decoration: none;
     background: transparent;
-  }
+  }*/
 </style>
 <script>
   export default {

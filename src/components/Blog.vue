@@ -1,20 +1,22 @@
 <template>
-  <div class=" am-u-sm-9 blog-main">
-
-  <div class="blog-post" v-for="blog in blogs">
-  <ol class="am-breadcrumb am-breadcrumb-slash">
-          <li><a href="#" class="am-icon-home"> {{blog.cat1}} </a></li>
-          <li><a href="#"> {{blog.cat2}}</a></li>
-          </ol>
-        <h2 class="blog-post-title">{{blog.title}}</h2>
-        <p class="blog-post-meta">
-          <span class="am-icon-calendar"> </span> {{blog.date}}
-        </p>
-          {{{blog.content}}}
-        <hr>
-        <p> <span class="am-icon-tags"> </span> &nbsp;<span v-for="tag of blog.tags"><span class="am-badge am-badge-secondary am-round">{{tag}}</span> </span><p>
+  <div>
+  <br>
+  <div class="blog-main">
+        <div class="blog-post" v-for="blog in blogs">
+        <el-breadcrumb separator="/">
+          <el-breadcrumb-item><a href="#"> {{blog.cat1}} </a></el-breadcrumb-item>
+          <el-breadcrumb-item><a href="#"> {{blog.cat2}} </a></el-breadcrumb-item>  
+        </el-breadcrumb>    
+            <h2 class="blog-post-title">{{blog.title}}</h2>
+            <p class="blog-post-meta">
+              <span class="am-icon-calendar"> </span> {{blog.date}}
+            </p>
+            <section v-html="blog.content"></section>
+              <hr>
+            <p> <span class="am-icon-tags"> </span> &nbsp;<span v-for="tag of blog.tags"><span class="am-badge am-badge-secondary am-round">{{tag}}</span> </span><p>
+        </div>
   </div>
-    </div>
+  </div>
 </template>
 <style>
   /*
@@ -162,12 +164,11 @@
 
 </style>
 <script>
-  var amButton = require('amazeui-vue').button
   export default {
+    name: 'blog',
     components: {
-      'amButton': amButton
     },
-    ready () {
+    mounted () {
       this.$http.get('http://localhost:8888/get_articles')
         .then(function (ret) {
           this.blogs = ret.data['articles']

@@ -1,35 +1,49 @@
 <template>
-  <div class="container1">
+  <div class="container1" v-loading.fullscreen="fullscreenLoading">
     <div id="wrap">
-      <navbar> </navbar>
-      <br>
-      <div class="outer">
-        <div class="container">
-          <div class="am-g">
-            <blog v-if="$route.path === '/'" transition="slide"></blog>
-            <about v-if="$route.path === '/about'" transition="slide"></about>
-            <add v-if="$route.path === 'add'" transition="slide"></add>
-            <sidebar> </sidebar>
-          </div>
+      <header id="header">
+        <div id="banner"></div>
+        <div id="header-outer" class="outer">
+            <div id="header-title" class="inner">
+              <h1 id="logo-wrap" >
+                  <router-link to="/" id="logo" v-if="$route.path === '/'">LIT THE BONFIRE</router-link>
+                  <router-link to="/about" id="logo" v-if="$route.path === '/about'">ABOUT ME</router-link>
+              </h1>
+              <h2 id="subtitle-wrap" >
+                <router-link to="/" id="subtitle" v-if="$route.path === '/'">The fire fades, and the lord goes without thrones</router-link>
+                <router-link to="/about" id="subtitle" v-if="$route.path === '/about'">Link the fire, Kindle the flame</router-link>
+              </h2>  
+            </div>
+            <div id="header-inner" class="inner">
+              <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"> </a>
+                <router-link class="main-nav-link" to="/"><img id="ico" alt="Brand" src="./assets/bonfire.png"></router-link>
+                <router-link class="main-nav-link" to="/">Bonfire</li></router-link>
+                <router-link class="main-nav-link" to="/about">About me</li></router-link>
+                <a class="main-nav-link" href="http://github.com/SunskyXH">GitHub</li></a>
+              </nav>
+              <nav id="sub-nav">
+                <a class="main-nav-link" href="http://vuejs.org"><img id="vuelogo" src="./assets/logo.png" ></a>
+              </nav>
+            </div>
         </div>
+      </header>
+    
+      <div class="outer">
+      <el-row :gutter="20">
+      <el-col :span="16">
+        <transition name="fade" mode="out-in">
+          <router-view class="view"></router-view>
+        </transition>
+      </el-col>
+      <el-col :span="6">
+        <sidebar></sidebar>
+      </el-col>
+      </el-row>
       </div>
     </div>
-  </div>
+  </div>  
 </template>
-<script>
-import Navbar from './components/Navbar'
-import Blog from './components/Blog'
-import About from './components/About'
-import Sidebar from './components/Sidebar'
-export default {
-  components: {
-    Navbar,
-    Blog,
-    About,
-    Sidebar
-  }
-}
-</script>
 <style>
   *{
     margin: 0;
@@ -45,13 +59,51 @@ export default {
   a:hover,a:link {
     text-decoration: none;
   }
+  #ico ,#vuelogo {
+    width: 20px;
+    height: 20px;
+  }
 
-  .expand2-transition {
+  #banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./assets/banner4.png") center #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: all .2s ease;
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0;
+  }
+  
+  .expand-enter-active, .expand-leave-active {
     transition: all .5s ease;
   }
 
-  .expand2-enter, .expand2-leave {
+  .expand-enter, .expand-leave-active {
     padding: 0 0;
     opacity: 0;
   }
 </style>
+<script>
+  import Sidebar from './components/Sidebar'
+  export default {
+    components: {
+      Sidebar
+    },
+    data () {
+      return {
+        fullscreenLoading: false
+      }
+    }
+  }
+</script>
+
