@@ -21,7 +21,9 @@ const store = new Vuex.Store({
     }
   },
   getters: {
-
+    getLoadingState: state => {
+      return state.loading
+    }
   }
 })
 
