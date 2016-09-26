@@ -13,11 +13,9 @@ const store = new Vuex.Store({
   mutations: {
     startLoading (state) {
       state.loading = true
-      console.log(state.loading)
     },
     finishLoading (state) {
       state.loading = false
-      console.log(state.loading)
     }
   },
   getters: {

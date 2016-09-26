@@ -12,7 +12,7 @@
             <table>
               <tr>
                 <td><i class="am-icon-github am-icon-fw"></i> GitHub:</li></td>
-                <td><a href="https://github.com/SunskyXH" target="_blank" rel="external">SunskyXH</a></td>
+                <td><a href="https://github.com/SunskyXH" target="_blank" rel="external"><i class="am-icon-github-alt"></i>SunskyXH</a></td>
               </tr>
               <tr>
                 <td><i class="am-icon-envelope am-icon-fw"></i> E-mails:</li></td>
@@ -29,7 +29,7 @@
                 </td>
               </tr>
               <tr>
-                <td><i class="am-icon-magic am-icon-fw"></i> Skills:</td>
+                <td><i class="am-icon-laptop am-icon-fw"></i> Skills:</td>
                 <td>
                   <i class="am-icon-git am-icon-fw"></i>
                   <i class="am-icon-linux am-icon-fw"></i>
@@ -41,7 +41,8 @@
               </tr>
             </table>
             <p>
-              绝不是萌豚,一只鶸,正在迈入前端大坑
+              爱好哲♂学,不是萌豚,一只鶸,正在迈入前端大坑的萌新,希望能变得很厉害<br />
+              最后祝你,身体健康❤️
             </p>
             <hr>
             <a href="#" >举报</a>
@@ -62,7 +63,8 @@
   }
 </style>
 <script>
+// import store from '../store/index'
+// store.commit('finishLoading')
 export default {
-  name: 'navbar'
 }
 </script>

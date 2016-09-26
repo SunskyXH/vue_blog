@@ -32,6 +32,8 @@
         <span class="am-badge am-badge-danger am-round">Angular</span>
         <span class="am-badge am-badge-primary am-round">React</span>
         <span class="am-badge am-badge-secondary am-round">React-Native</span>
+        <span class="am-badge am-badge-success am-round">back-end</span>
+        <span class="am-badge am-badge-danger am-round">database</span>
       </ol>
     </div>
   </div><!-- /.blog-sidebar -->
