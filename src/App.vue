@@ -1,5 +1,5 @@
 <template>
-  <div class="container1"  v-loading.fullscreen="fullscreenLoading">
+  <div class="container1"  v-loading.fullscreen="$store.state.loading">
     <div id="wrap" >
       <header id="header">
         <div id="banner"></div>
@@ -120,21 +120,22 @@
 </style>
 <script>
   import Sidebar from './components/Sidebar'
+  import store from './store/index'
   export default {
     components: {
       Sidebar
     },
     data () {
       return {
-        fullscreenLoading: false
+        // fullscreenLoading: store.state.loading
       }
     },
     methods: {
       refreshFullPage () {
-        this.fullscreenLoading = true
+        store.commit('startLoading')
         setTimeout(() => {
-          this.fullscreenLoading = false
-        }, 1000)
+          store.commit('finishLoading')
+        }, 1500)
       }
     }
   }

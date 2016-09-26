@@ -1,7 +1,7 @@
 <template>
   <div>
   <br>
-  <div class="blog-main">
+  <div class="blog-main" >
         <div class="blog-post" v-for="blog in blogs">
         <el-breadcrumb separator="/">
           <el-breadcrumb-item><a href="#"> {{blog.cat1}} </a></el-breadcrumb-item>
@@ -114,11 +114,9 @@
   .blog-footer p:last-child {
     margin-bottom: 0;
   }
-
-
-
 </style>
 <script>
+  import store from '../store/index'
   export default {
     name: 'blog',
     components: {
@@ -127,6 +125,10 @@
       this.$http.get('http://localhost:8888/get_articles')
         .then(function (ret) {
           this.blogs = ret.data['articles']
+          setTimeout(() => {
+            store.commit('finishLoading')
+          }, 1000)
+          // store.commit('finishLoading')
         })
         .then(function (err) {
           if (err) {
