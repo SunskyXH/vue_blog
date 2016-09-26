@@ -1,6 +1,8 @@
-# vue_test
+# bonfire
 
-> vue blog
+> A vue blog
+> vue2+vue-resource+vue-router+vuex
+> Element highlight.js
 
 ## Build Setup
 

@@ -24,6 +24,7 @@
               </nav>
               <nav id="sub-nav">
                 <a class="main-nav-link" @click="refreshFullPage()"><i class="el-icon-loading"></i></a>
+                <a class="main-nav-link" href="#"><i class="am-icon-dashboard"></i></a>
                 <a class="main-nav-link" href="http://vuejs.org"><img id="vuelogo" src="./assets/logo.png" ></a>
               </nav>
             </div>
