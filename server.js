@@ -75,6 +75,7 @@ app.get('/get_articles',function (req, res, next) {
       console.error(err);
       return;
     }
+    ret.reverse()
     res.json({
       errorcode: 0,
       errmsg: "ok",
@@ -82,5 +83,3 @@ app.get('/get_articles',function (req, res, next) {
     });
   });
 });
-
-

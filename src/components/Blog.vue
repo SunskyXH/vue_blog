@@ -5,13 +5,13 @@
         <div class="blog-post" v-for="blog in blogs">
         <el-breadcrumb separator="/">
           <el-breadcrumb-item><a href="#"> {{blog.cat1}} </a></el-breadcrumb-item>
-          <el-breadcrumb-item><a href="#"> {{blog.cat2}} </a></el-breadcrumb-item>  
-        </el-breadcrumb>    
+          <el-breadcrumb-item><a href="#"> {{blog.cat2}} </a></el-breadcrumb-item>
+        </el-breadcrumb>
             <h2 class="blog-post-title">{{blog.title}}</h2>
             <p class="blog-post-meta">
-              <span class="am-icon-calendar"> </span> {{blog.date}}
+              <i class="el-icon-date"> {{blog.date}}</i>
             </p>
-            <section v-html="blog.content"></section>
+            <div v-html="blog.content" v-highlightjs></div>
               <hr>
             <p> <span class="am-icon-tags"> </span> &nbsp;<span v-for="tag of blog.tags"><span class="am-badge am-badge-secondary am-round">{{tag}}</span> </span><p>
         </div>
@@ -20,39 +20,8 @@
 </template>
 <style>
   /*
-   * Globals
-   */
-
-  body {
-    color: #555;
-  }
-
-  h1, .h1,
-  h2, .h2,
-  h3, .h3,
-  h4, .h4,
-  h5, .h5,
-  h6, .h6 {
-    margin-top: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: normal;
-    color: #333;
-  }
-
-  /*
-   * Override Bootstrap's default container.
-   */
-
-  /*@media (min-width: 1200px) {*/
-    /*.container {*/
-      /*width: 970px;*/
-    /*}*/
-  /*}*/
-
-  /*
    * Blog name and description
    */
-
   .blog-header {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -67,30 +36,12 @@
     font-size: 20px;
     color: #999;
   }
-
   /*
    * Main column and sidebar layout
    */
-
   .blog-main {
     font-size: 16px;
     line-height: 1.428;
-  }
-
-  /* Sidebar modules for boxing content */
-  .sidebar-module {
-    padding: 15px;
-    margin: 0 -15px 15px;
-  }
-  .sidebar-module-inset {
-    padding: 15px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-  }
-  .sidebar-module-inset p:last-child,
-  .sidebar-module-inset ul:last-child,
-  .sidebar-module-inset ol:last-child {
-    margin-bottom: 0;
   }
 
   /* Pagination */
@@ -104,11 +55,9 @@
     text-align: center;
     border-radius: 30px;
   }
-
   /*
    * Blog posts
    */
-
   .blog-post {
     margin-bottom: 60px;
     padding: 15px;
@@ -123,11 +72,38 @@
     margin-bottom: 20px;
     color: #999;
   }
+  code {
+    font-family: Menlo, Consolas, Monaco,monospace;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #c7254e;
+    background-color: #D0E5F2;
+  }
+  pre {
+    padding: 0;
+    font-size: 16px;
+    border: 0 solid;
+  }
+  pre .hljs, code .hljs {
+    font-size: 18px;
+    font-family: Menlo, Consolas, Monaco,monospace;
+    border-radius: 4px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+  blockquote {
+    font-size: 18px;
+    border-left: 3px solid #D0E5F2;
+    padding: 10px 20px;
+    margin: 20px 0 20px;
+  }
+  hr {
+    border: 1px dashed #ddd;
+  }
 
   /*
    * Footer
    */
-
   .blog-footer {
     padding: 40px 0;
     color: #999;
@@ -135,32 +111,11 @@
     background-color: #f9f9f9;
     border-top: 1px solid #e5e5e5;
   }
-
   .blog-footer p:last-child {
     margin-bottom: 0;
   }
 
-  pre {
-    background-color: #eee;
-    white-space: pre-wrap;
-    white-space: -moz-pre-wrap;
-    white-space: -o-pre-wrap;
-    word-wrap: break-word;
 
-  }
-
-  blockquote {
-    border-left: 3px solid #D0E5F2;
-  }
-
-  a {
-    color: #009a61;
-    text-decoration: none;
-    background: transparent;
-  }
-  hr {
-    border: 1px dashed #ddd;
-  }
 
 </style>
 <script>

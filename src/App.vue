@@ -1,6 +1,6 @@
 <template>
-  <div class="container1" v-loading.fullscreen="fullscreenLoading">
-    <div id="wrap">
+  <div class="container1"  v-loading.fullscreen="fullscreenLoading">
+    <div id="wrap" >
       <header id="header">
         <div id="banner"></div>
         <div id="header-outer" class="outer">
@@ -12,7 +12,7 @@
               <h2 id="subtitle-wrap" >
                 <router-link to="/" id="subtitle" v-if="$route.path === '/'">The fire fades, and the lord goes without thrones</router-link>
                 <router-link to="/about" id="subtitle" v-if="$route.path === '/about'">Link the fire, Kindle the flame</router-link>
-              </h2>  
+              </h2>
             </div>
             <div id="header-inner" class="inner">
               <nav id="main-nav">
@@ -23,15 +23,16 @@
                 <a class="main-nav-link" href="http://github.com/SunskyXH">GitHub</li></a>
               </nav>
               <nav id="sub-nav">
+                <a class="main-nav-link" @click="refreshFullPage()"><i class="el-icon-loading"></i></a>
                 <a class="main-nav-link" href="http://vuejs.org"><img id="vuelogo" src="./assets/logo.png" ></a>
               </nav>
             </div>
         </div>
       </header>
-    
+
       <div class="outer">
-      <el-row :gutter="20">
-      <el-col :span="16">
+      <el-row :gutter="35">
+      <el-col :span="18">
         <transition name="fade" mode="out-in">
           <router-view class="view"></router-view>
         </transition>
@@ -42,9 +43,12 @@
       </el-row>
       </div>
     </div>
-  </div>  
+  </div>
 </template>
 <style>
+ /*
+ * Globals
+ */
   *{
     margin: 0;
     padding: 0;
@@ -54,16 +58,37 @@
   }
   body {
     background-color: #eee;
-  }
+    color: #555;
 
+  }
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6 {
+    margin-top: 0;
+    /*font-family: Menlo,"Helvetica Neue", Helvetica, Arial, sans-serif, ;*/
+    /*font-family: Monoca,monospace;*/
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    font-weight: normal;
+    color: #333;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+  a {
+    color: #13CE66;
+    text-decoration: none;
+    background: transparent;
+  }
   a:hover,a:link {
     text-decoration: none;
   }
+  /*index navbar*/
   #ico ,#vuelogo {
     width: 20px;
     height: 20px;
   }
-
   #banner {
     position: absolute;
     top: 0;
@@ -76,18 +101,17 @@
     background-size: cover;
     z-index: -1;
   }
-
+  /*transition*/
   .fade-enter-active, .fade-leave-active {
     transition: all .2s ease;
   }
   .fade-enter, .fade-leave-active {
     opacity: 0;
   }
-  
+
   .expand-enter-active, .expand-leave-active {
     transition: all .5s ease;
   }
-
   .expand-enter, .expand-leave-active {
     padding: 0 0;
     opacity: 0;
@@ -103,7 +127,14 @@
       return {
         fullscreenLoading: false
       }
+    },
+    methods: {
+      refreshFullPage () {
+        this.fullscreenLoading = true
+        setTimeout(() => {
+          this.fullscreenLoading = false
+        }, 1000)
+      }
     }
   }
 </script>
-

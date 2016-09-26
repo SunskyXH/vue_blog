@@ -19,7 +19,7 @@
                 <td><a href="#" target="_blank" rel="external">SunskyXH@Gmail.com</a>, <a href=#>y445360776@qq.com</a></td>
               </tr>
               <tr>
-                <td><i class="am-icon-rocket am-icon-fw"></i> Others:</td>
+                <td><i class="am-icon-rocket am-icon-fw"></i> SNS:</td>
                 <td>
                   <a href="https://twitter.com/sanctussunsky" class="am-icon-btn am-secondary am-icon-twitter"></a>
                   <a href="https://www.facebook.com/profile.php?id=100004513845502" class="am-icon-btn am-primary am-icon-facebook"></a>
@@ -56,7 +56,7 @@
     border-radius: 4px;
   }
   .article-entry a {
-    color: #009a61;
+    color: #20A0FF;
     text-decoration: none;
     background: transparent;
   }
