@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 import Element from 'element-ui'
-import 'element-ui/lib/theme-default/index.css'
+
 import Hljs from 'highlight.js'
 import 'highlight.js/styles/gruvbox-dark.css'
 import '../static/style.css'
 import '../static/css/amazeui.min.css'
+import 'element-ui/lib/theme-default/index.css'
 
 import App from './App'
+// import Console from './components/Console'
 import store from './store'
 import router from './router'
 
@@ -24,5 +26,12 @@ const app = new Vue({
   store,
   ...App
 })
+
+// var ConsolePage = Vue.extend ({
+//   template: "#console"
+// })
+// var AppPage = Vue.extend ({
+//   template: "#main"
+// })
 
 export { app, router, store }

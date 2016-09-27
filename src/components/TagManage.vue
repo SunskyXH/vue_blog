@@ -1,6 +1,6 @@
 <template>
   <p>
-    this is admin
+    this is tag
   </p>
 </template>
 <style></style>

@@ -1,50 +1,5 @@
 <template>
-  <div class="container1" >
-    <div id="wrap" >
-      <header id="header">
-        <div id="banner"></div>
-        <div id="header-outer" class="outer">
-            <div id="header-title" class="inner">
-              <h1 id="logo-wrap" >
-                  <router-link to="/" id="logo" v-if="$route.path === '/'">LIT THE BONFIRE</router-link>
-                  <router-link to="/about" id="logo" v-if="$route.path === '/about'">ABOUT ME</router-link>
-              </h1>
-              <h2 id="subtitle-wrap" >
-                <router-link to="/" id="subtitle" v-if="$route.path === '/'">The fire fades, and the lord goes without thrones</router-link>
-                <router-link to="/about" id="subtitle" v-if="$route.path === '/about'">Link the fire, Kindle the flame</router-link>
-              </h2>
-            </div>
-            <div id="header-inner" class="inner">
-              <nav id="main-nav">
-                <a id="main-nav-toggle" class="nav-icon"> </a>
-                <router-link class="main-nav-link" to="/"><img id="ico" alt="Brand" src="./assets/bonfire.png"></router-link>
-                <router-link class="main-nav-link" to="/">Bonfire</li></router-link>
-                <router-link class="main-nav-link" to="/about">About me</li></router-link>
-                <a class="main-nav-link" href="http://github.com/SunskyXH">GitHub</li></a>
-              </nav>
-              <nav id="sub-nav">
-                <a class="main-nav-link" @click="refreshFullPage()"><i class="el-icon-loading"></i></a>
-                <a class="main-nav-link" href="#"><i class="am-icon-dashboard"></i></a>
-                <a class="main-nav-link" href="http://vuejs.org"><img id="vuelogo" src="./assets/logo.png" ></a>
-              </nav>
-            </div>
-        </div>
-      </header>
-
-      <div class="outer">
-      <el-row :gutter="35">
-      <el-col :span="18">
-        <transition name="fade" mode="out-in">
-          <router-view class="view"></router-view>
-        </transition>
-      </el-col>
-      <el-col :span="6">
-        <sidebar></sidebar>
-      </el-col>
-      </el-row>
-      </div>
-    </div>
-  </div>
+  <router-view></router-view>
 </template>
 <style>
  /*
@@ -119,24 +74,4 @@
   }
 </style>
 <script>
-  import Sidebar from './components/Sidebar'
-  import store from './store/index'
-  export default {
-    components: {
-      Sidebar
-    },
-    data () {
-      return {
-        // fullscreenLoading: store.state.loading
-      }
-    },
-    methods: {
-      refreshFullPage () {
-        store.commit('startLoading')
-        setTimeout(() => {
-          store.commit('finishLoading')
-        }, 1500)
-      }
-    }
-  }
 </script>

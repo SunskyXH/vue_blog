@@ -17,15 +17,15 @@
             <div id="header-inner" class="inner">
               <nav id="main-nav">
                 <a id="main-nav-toggle" class="nav-icon"> </a>
-                <router-link class="main-nav-link" to="/"><img id="ico" alt="Brand" src="./assets/bonfire.png"></router-link>
+                <router-link class="main-nav-link" to="/"><img id="ico" alt="Brand" src="../assets/bonfire.png"></router-link>
                 <router-link class="main-nav-link" to="/">Bonfire</li></router-link>
                 <router-link class="main-nav-link" to="/about">About me</li></router-link>
                 <a class="main-nav-link" href="http://github.com/SunskyXH">GitHub</li></a>
               </nav>
               <nav id="sub-nav">
                 <a class="main-nav-link" @click="refreshFullPage()"><i class="el-icon-loading"></i></a>
-                <a class="main-nav-link" href="#"><i class="am-icon-dashboard"></i></a>
-                <a class="main-nav-link" href="http://vuejs.org"><img id="vuelogo" src="./assets/logo.png" ></a>
+                <router-link class="main-nav-link" to="/console"><i class="am-icon-dashboard"></i></router-link>
+                <a class="main-nav-link" href="http://vuejs.org"><img id="vuelogo" src="../assets/logo.png" ></a>
               </nav>
             </div>
         </div>
@@ -76,6 +76,7 @@
     color: #333;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
+    
   }
   a {
     color: #13CE66;
@@ -96,7 +97,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("./assets/banner4.png") center #000;
+    background: url("../assets/banner4.png") center #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;

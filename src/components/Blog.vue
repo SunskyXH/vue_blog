@@ -36,6 +36,7 @@
     margin-bottom: 0;
     font-size: 60px;
     font-weight: normal;
+
   }
   .blog-description {
     font-size: 20px;
@@ -73,6 +74,7 @@
     margin-bottom: 5px;
     font-size: 40px;
   }
+  
   .blog-post-meta {
     margin-bottom: 20px;
     color: #999;
