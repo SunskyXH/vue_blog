@@ -7,13 +7,18 @@
           <el-breadcrumb-item><a href="#"> {{blog.cat1}} </a></el-breadcrumb-item>
           <el-breadcrumb-item><a href="#"> {{blog.cat2}} </a></el-breadcrumb-item>
         </el-breadcrumb>
-            <h2 class="blog-post-title">{{blog.title}}</h2>
+            <router-link :to="{ path:'article/'+blog.id }"><h2 class="blog-post-title">{{blog.title}}</h2></router-link>
             <p class="blog-post-meta">
               <i class="el-icon-date"> {{blog.date}}</i>
             </p>
             <div v-html="blog.content" v-highlightjs></div>
               <hr>
-            <p> <span class="am-icon-tags"> </span> &nbsp;<span v-for="tag of blog.tags"><span class="am-badge am-badge-secondary am-round">{{tag}}</span> </span><p>
+            <p>
+              <span class="am-icon-tags"> </span> &nbsp;
+              <slot v-for="tag of blog.tags">
+                <router-link :to="{ path:'/tag/'+tag.name }"><span :class="'am-badge '+'am-badge-'+tag.color+' am-round'">{{tag.name}}</span></router-link>&nbsp;
+              </slot>
+            <p>
         </div>
   </div>
   </div>

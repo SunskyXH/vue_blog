@@ -1,5 +1,5 @@
 <template>
-  <div class="container1"  v-loading.fullscreen="$store.state.loading">
+  <div class="container1" >
     <div id="wrap" >
       <header id="header">
         <div id="banner"></div>

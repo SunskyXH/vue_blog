@@ -52,7 +52,8 @@ app.post('/create',function(req, res, next) {
     date: article.date,
     cat1: article.cat1,
     cat2: article.cat2,
-    tags: article.tags
+    tags: article.tags,
+    id: article.id
   }, function(err,ret) {
      if (err) {
        console.error(err);
@@ -80,6 +81,22 @@ app.get('/get_articles',function (req, res, next) {
       errorcode: 0,
       errmsg: "ok",
       articles: ret
+    });
+  });
+});
+
+app.get('/get_tags', function(req, res, next) {
+  var collection = _db.collection('tags');
+
+  collection.find({}).toArray(function (err, ret) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    res.json({
+      errorcode:0,
+      errmsg: "ok",
+      tags:ret
     });
   });
 });

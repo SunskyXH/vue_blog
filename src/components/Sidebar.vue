@@ -5,7 +5,7 @@
       <h4>分类</h4>
       <p>学习笔记</p>
       <ol class="list-unstyled">
-        <li><a href="#">vue.js</a></li>
+        <li><a href="#">Vue</a></li>
       </ol>
       <p>开发笔记</p>
       <ol class="list-unstyled">
@@ -27,13 +27,10 @@
     <div class="sidebar-module sidebar-module-inset">
       <h4>标签们</h4>
       <ol class="list-unstyled">
-        <span class="am-badge am-badge-warning am-round">front-end</span>
-        <span class="am-badge am-badge-success am-round">vue.js</span>
-        <span class="am-badge am-badge-danger am-round">Angular</span>
-        <span class="am-badge am-badge-primary am-round">React</span>
-        <span class="am-badge am-badge-secondary am-round">React-Native</span>
-        <span class="am-badge am-badge-success am-round">back-end</span>
-        <span class="am-badge am-badge-danger am-round">database</span>
+        <slot v-for="tag in tags" >
+          <router-link :to="{ path:'/tag/'+tag.name }" ><span :class="'am-badge '+'am-badge-'+tag.color+' am-round'">{{tag.name}}</span></router-link>&nbsp;
+        </slot>
+
       </ol>
     </div>
   </div><!-- /.blog-sidebar -->
@@ -58,12 +55,24 @@
 </style>
 <script>
   export default {
+    mounted () {
+      this.$http.get('http://localhost:8888/get_tags')
+        .then(function (ret) {
+          this.tags = ret.data['tags']
+        })
+        .then(function (err) {
+          if (err) {
+            console.log(err)
+          }
+        })
+    },
     data () {
+      var tags = this.tags
       return {
+        tags: tags
       }
     },
     methods: {
-
     }
   }
 </script>
