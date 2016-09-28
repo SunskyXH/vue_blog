@@ -11,6 +11,7 @@ import Tag from '../components/Tag'
 import Console from '../components/Console'
 import ArticleManage from '../components/ArticleManage'
 import TagManage from '../components/TagManage'
+import Dashboard from '../components/Dashboard'
 
 export default new Router({
   routes: [
@@ -18,16 +19,20 @@ export default new Router({
       path: '/', component: Index,
       children: [
         { path: '', component: Blog },
-        { path: '/about', component: About },
-        { path: '/article/:id', component: Article },
-        { path: '/tag/:name', component: Tag }
+        { path: 'about', component: About },
+        { path: 'article/:id', component: Article },
+        { path: 'tag/:name', component: Tag }
       ]
     },
     {
       path: '/console', component: Console,
       children: [
+        { path: '', component: Dashboard },
+        { path: 'dashboard', component: Dashboard },
         { path: 'article', component: ArticleManage },
-        { path: 'tag', component: TagManage }
+        { path: 'article/:id', component: ArticleManage },
+        { path: 'tag', component: TagManage },
+        { path: 'tag/:name', component: TagManage }
       ]
     },
 		{ path: '*', redirect: '/' }

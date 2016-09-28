@@ -4,8 +4,8 @@
   <div class="blog-main" >
         <div class="blog-post" v-for="blog in blogs">
         <el-breadcrumb separator="/">
-          <el-breadcrumb-item><a href="#"> {{blog.cat1}} </a></el-breadcrumb-item>
-          <el-breadcrumb-item><a href="#"> {{blog.cat2}} </a></el-breadcrumb-item>
+          <el-breadcrumb-item><router-link to="#"> {{blog.cat1}} </router-link></el-breadcrumb-item>
+          <el-breadcrumb-item><router-link to="#"> {{blog.cat2}} </router-link></el-breadcrumb-item>
         </el-breadcrumb>
             <router-link :to="{ path:'article/'+blog.id }"><h2 class="blog-post-title">{{blog.title}}</h2></router-link>
             <p class="blog-post-meta">
@@ -23,7 +23,7 @@
   </div>
   </div>
 </template>
-<style>
+<style scoped>
   /*
    * Blog name and description
    */
@@ -74,38 +74,16 @@
     margin-bottom: 5px;
     font-size: 40px;
   }
-  
+
   .blog-post-meta {
     margin-bottom: 20px;
     color: #999;
   }
-  code {
-    font-family: Menlo, Consolas, Monaco,monospace;
-    padding: 2px 4px;
-    border-radius: 4px;
-    color: #c7254e;
-    background-color: #D0E5F2;
-  }
-  pre {
-    padding: 0;
-    font-size: 16px;
-    border: 0 solid;
-  }
-  pre .hljs, code .hljs {
-    font-size: 18px;
-    font-family: Menlo, Consolas, Monaco,monospace;
-    border-radius: 4px;
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-osx-font-smoothing: auto;
-  }
-  blockquote {
-    font-size: 18px;
-    border-left: 3px solid #D0E5F2;
-    padding: 10px 20px;
-    margin: 20px 0 20px;
-  }
-  hr {
-    border: 1px dashed #ddd;
+  
+  a {
+    color: #13CE66;
+    text-decoration: none;
+    background: transparent;
   }
 
   /*

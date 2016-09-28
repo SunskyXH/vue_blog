@@ -68,7 +68,7 @@ app.post('/create',function(req, res, next) {
 
 });
 
-app.get('/get_articles',function (req, res, next) {
+app.get('/get_articles', function (req, res, next) {
   var collection = _db.collection('articles');
 
   collection.find({}).toArray(function (err, ret) {
@@ -97,6 +97,36 @@ app.get('/get_tags', function(req, res, next) {
       errorcode:0,
       errmsg: "ok",
       tags:ret
+    });
+  });
+});
+
+app.get('/get_info/tags', function (req, res, next) {
+    var collection = _db.collection('tags');
+    collection.find({}).toArray(function (err, ret) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+    res.json({
+      errorcode: 0,
+      errmsg: "ok",
+      tagsNumber: ret.length
+    });
+  });
+});
+
+app.get('/get_info/articles', function (req, res, next) {
+  var collection = _db.collection('articles');
+  collection.find({}).toArray(function (err, ret) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    res.json({
+      errorcode: 0,
+      errmsg: "ok",
+      articlesNumber: ret.length
     });
   });
 });

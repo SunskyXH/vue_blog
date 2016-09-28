@@ -35,7 +35,7 @@
     </div>
   </div><!-- /.blog-sidebar -->
 </template>
-<style>
+<style scoped>
   /* Sidebar modules for boxing content */
   .sidebar-module {
     padding: 15px;
@@ -51,7 +51,11 @@
   .sidebar-module-inset ol:last-child {
     margin-bottom: 0;
   }
-
+  a {
+    color: #13CE66;
+    text-decoration: none;
+    background: transparent;
+  }
 </style>
 <script>
   export default {

@@ -23,7 +23,6 @@
                 <a class="main-nav-link" href="http://github.com/SunskyXH">GitHub</li></a>
               </nav>
               <nav id="sub-nav">
-                <a class="main-nav-link" @click="refreshFullPage()"><i class="el-icon-loading"></i></a>
                 <router-link class="main-nav-link" to="/console"><i class="am-icon-dashboard"></i></router-link>
                 <a class="main-nav-link" href="http://vuejs.org"><img id="vuelogo" src="../assets/logo.png" ></a>
               </nav>
@@ -76,14 +75,13 @@
     color: #333;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
-    
+
   }
   a {
-    color: #13CE66;
     text-decoration: none;
     background: transparent;
   }
-  a:hover,a:link {
+  a:hover,a:link,a:focus {
     text-decoration: none;
   }
   /*index navbar*/
@@ -102,6 +100,34 @@
     -moz-background-size: cover;
     background-size: cover;
     z-index: -1;
+  }
+  code {
+    font-family: Menlo, Consolas, Monaco,monospace;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #c7254e;
+    background-color: #FFF;
+  }
+  pre {
+    padding: 0;
+    font-size: 16px;
+    border: 0 solid;
+  }
+  pre .hljs, code .hljs {
+    font-size: 18px;
+    font-family: Menlo, Consolas, Monaco,monospace;
+    border-radius: 4px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+  blockquote {
+    font-size: 18px;
+    border-left: 3px solid #D0E5F2;
+    padding: 10px 20px;
+    margin: 20px 0 20px;
+  }
+  hr {
+    border: 1px dashed #ddd;
   }
   /*transition*/
   .fade-enter-active, .fade-leave-active {
