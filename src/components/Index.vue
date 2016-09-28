@@ -59,7 +59,7 @@
   body {
     background-color: #eee;
     color: #555;
-
+    height: 100%;
   }
   h1, .h1,
   h2, .h2,
