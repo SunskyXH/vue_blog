@@ -9,7 +9,6 @@
     </el-col>
     <el-col :span="8">
       <el-card :body-style="{ padding: '0px' }">
-        <!-- <img src="~examples/assets/images/hamburger.png" class="image"> -->
         <div style="padding: 14px;">
           <span>Articles Numbers</span>
           <div class="bottom clearfix">
@@ -41,35 +40,35 @@
 }
 </style>
 <script>
-export default {
-  mounted () {
-    this.$http.get('http://localhost:8888/get_info/tags')
+  export default {
+    mounted () {
+      this.$http.get('http://localhost:8888/get_info/tags')
+        .then(function (ret) {
+          this.tagsNumber = ret.data.tagsNumber
+          console.log(ret.data.tagsNumber)
+        })
+        .then(function (err) {
+          if (err) {
+            console.log(err)
+          }
+        })
+      this.$http.get('http://localhost:8888/get_info/articles')
       .then(function (ret) {
-        this.tagsNumber = ret.data.tagsNumber
-        console.log(ret.data.tagsNumber)
+        this.articlesNumber = ret.data.articlesNumber
       })
       .then(function (err) {
         if (err) {
           console.log(err)
         }
       })
-    this.$http.get('http://localhost:8888/get_info/articles')
-    .then(function (ret) {
-      this.articlesNumber = ret.data.articlesNumber
-    })
-    .then(function (err) {
-      if (err) {
-        console.log(err)
+    },
+    data () {
+      var tagsNumber = this.tagsNumber
+      var articlesNumber = this.articlesNumber
+      return {
+        tagsNumber: tagsNumber,
+        articlesNumber: articlesNumber
       }
-    })
-  },
-  data () {
-    var tagsNumber = this.tagsNumber
-    var articlesNumber = this.articlesNumber
-    return {
-      tagsNumber: tagsNumber,
-      articlesNumber: articlesNumber
     }
   }
-}
 </script>

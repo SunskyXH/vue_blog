@@ -31,21 +31,25 @@
               <tr>
                 <td><i class="am-icon-laptop am-icon-fw"></i> Skills:</td>
                 <td>
-                  <i class="am-icon-git am-icon-fw"></i>
-                  <i class="am-icon-linux am-icon-fw"></i>
-                  <i class="am-icon-html5 am-icon-fw"></i>
-                  <i class="am-icon-css3 am-icon-fw"></i>
+                  <i class="icon ion-social-tux"></i>
+                  <i class="icon ion-social-html5"></i>
+                  <i class="icon ion-social-css3"></i>
+                  <i class="icon ion-social-javascript"></i>
+                  <i class="icon ion-social-angular"></i>
+                  <i class="icon ion-social-nodejs"></i>
+                  <i class="icon ion-social-python"></i>
                   <i class="am-icon-database am-icon-fw"></i>
+                  <i class="am-icon-git am-icon-fw"></i>
                   /*以上内容其实都不会*/
                 </td>
               </tr>
             </table>
             <p>
               爱好哲♂学,不是萌豚,一只鶸,正在迈入前端大坑的萌新,希望能变得很厉害<br />
-              最后祝你,身体健康❤️
+              最后祝你身体健康
             </p>
             <hr>
-            <a href="#" >举报</a>
+            <a href="#">举报</a>
           </div>
 </div>
 </template>
