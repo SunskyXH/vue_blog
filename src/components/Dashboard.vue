@@ -7,24 +7,23 @@
       </el-breadcrumb>
       <br />
     </el-col>
-    <el-col :span="8">
+    <el-col :span="6">
       <el-card :body-style="{ padding: '0px' }">
+        <img src="../assets/TheBody.jpg" class="image">
         <div style="padding: 14px;">
-          <span>Articles Numbers</span>
+          <span>Articles Numbers:{{articlesNumber}}</span>
           <div class="bottom clearfix">
-            {{articlesNumber}}
             <router-link to="/console/article"><el-button type="text" class="button">查看详情</el-button></router-link>
           </div>
         </div>
       </el-card>
     </el-col>
-    <el-col :span="8">
+    <el-col :span="6">
       <el-card :body-style="{ padding: '0px' }">
-        <!-- <img src="~examples/assets/images/hamburger.png" class="image"> -->
+        <img src="../assets/TheMind.jpg" class="image">
         <div style="padding: 14px;">
-          <span>Tags Numbers</span>
+          <span>Tags Numbers:{{tagsNumber}}</span>
           <div class="bottom clearfix">
-            {{tagsNumber}}
             <router-link to="/console/tag"><el-button type="text" class="button">查看详情</el-button></router-link>
           </div>
         </div>

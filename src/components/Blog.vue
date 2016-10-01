@@ -79,7 +79,7 @@
     margin-bottom: 20px;
     color: #999;
   }
-  
+
   a {
     color: #13CE66;
     text-decoration: none;

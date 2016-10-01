@@ -16,7 +16,6 @@ MongoClient.connect(mongoUrl, function (err, db) {
     console.log(err);
     return;
   }
-
   console.log('connected to mongo');
   _db = db;
   app.listen(8888, function () {
@@ -70,7 +69,6 @@ app.post('/create',function(req, res, next) {
 
 app.get('/get_articles', function (req, res, next) {
   var collection = _db.collection('articles');
-
   collection.find({}).toArray(function (err, ret) {
     if (err) {
       console.error(err);
@@ -84,7 +82,20 @@ app.get('/get_articles', function (req, res, next) {
     });
   });
 });
-
+app.get('/get_articles/:id', function (req, res, next) {
+  var collection = _db.collection('articles');
+  collection.find({"id":req.params.id}).toArray(function (err, ret) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res.json({
+      errorcode: 0,
+      errmsg: "ok",
+      article: ret
+    })
+  });
+});
 app.get('/get_tags', function(req, res, next) {
   var collection = _db.collection('tags');
 
@@ -100,7 +111,21 @@ app.get('/get_tags', function(req, res, next) {
     });
   });
 });
-
+app.get('/get_articles_tag/:name', function (req, res, next) {
+  var collection = _db.collection('articles');
+  collection.find({"tags":{$elemMatch:{"name":req.params.name}}}).toArray(function (err, ret) {
+    if(err) {
+      console.error(err);
+      return;
+    }
+    ret.reverse()
+    res.json({
+      errotcode:0,
+      errmsg: "ok",
+      articles:ret
+    })
+  });
+});
 app.get('/get_info/tags', function (req, res, next) {
     var collection = _db.collection('tags');
     collection.find({}).toArray(function (err, ret) {
