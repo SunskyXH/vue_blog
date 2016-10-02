@@ -14,6 +14,7 @@ import TagManage from '../components/TagManage'
 import Dashboard from '../components/Dashboard'
 import EditArticle from '../components/EditArticle'
 import EditTag from '../components/EditTag'
+import Archive from '../components/Archive'
 
 export default new Router({
   routes: [
@@ -22,6 +23,7 @@ export default new Router({
       children: [
         { path: '', component: Blog },
         { path: 'about', component: About },
+        { path: 'archive', component: Archive },
         { path: 'article/:id', component: Article },
         { path: 'tag/:name', component: Tag }
       ]

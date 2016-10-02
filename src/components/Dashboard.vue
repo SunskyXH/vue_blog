@@ -44,7 +44,6 @@
       this.$http.get('http://localhost:8888/get_info/tags')
         .then(function (ret) {
           this.tagsNumber = ret.data.tagsNumber
-          console.log(ret.data.tagsNumber)
         })
         .then(function (err) {
           if (err) {

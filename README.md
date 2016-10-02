@@ -6,6 +6,8 @@
 
 > UI framework: Element+Amaze UI+highlight.js
 
+> express+mongoDB
+
 ## Build Setup
 
 ``` bash

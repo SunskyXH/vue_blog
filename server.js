@@ -28,16 +28,14 @@ app.all("*", function (req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Content-Type,Content-Length, Authorization, Accept,X-Requested-With');
   res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
   if (req.method == 'OPTIONS') {
-    res.send(200);
+    res.sendStatus(200);
   } else {
     next();
   }
 });
-
-app.post('/create',function(req, res, next) {
+app.post('/create_article', function(req, res, next) {
   var article = req.body;
   var collection = _db.collection('articles');
-
   if(!article.content || !article.title || !article.date){
     res.send({
       errcode: -1,
@@ -64,9 +62,38 @@ app.post('/create',function(req, res, next) {
        })
      }
   });
-
 });
-
+app.post('/update_article/:id', function(req, res, next) {
+  var article = req.body;
+  var collection = _db.collection('articles');
+  if(!article.content || !article.title || !article.date){
+    res.send({
+      errcode: -1,
+      errmsg: "params missed"
+    });
+    return;
+  }
+  collection.update({'id':req.params.id},{
+    $set:{
+      content: article.content,
+      title: article.title,
+      date: article.date,
+      cat1: article.cat1,
+      cat2: article.cat2,
+      tags: article.tags
+    }
+  }, function(err,ret) {
+     if (err) {
+       console.error(err);
+       res.status(500).end();
+      } else {
+       res.send({
+         errcode: 0,
+         errmsg: "ok"
+        })
+      }
+    });
+});
 app.get('/get_articles', function (req, res, next) {
   var collection = _db.collection('articles');
   collection.find({}).toArray(function (err, ret) {
@@ -140,7 +167,6 @@ app.get('/get_info/tags', function (req, res, next) {
     });
   });
 });
-
 app.get('/get_info/articles', function (req, res, next) {
   var collection = _db.collection('articles');
   collection.find({}).toArray(function (err, ret) {

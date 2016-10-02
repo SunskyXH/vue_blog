@@ -20,10 +20,9 @@
                 <router-link class="main-nav-link" to="/"><img id="ico" alt="Brand" src="../assets/bonfire.png"></router-link>
                 <router-link class="main-nav-link" to="/">Bonfire</li></router-link>
                 <router-link class="main-nav-link" to="/about">About me</li></router-link>
-                <a class="main-nav-link" href="http://github.com/SunskyXH">GitHub</li></a>
+                <router-link class="main-nav-link" to="/archive">Archive</li></router-link>
               </nav>
               <nav id="sub-nav">
-                <router-link class="main-nav-link" to="/console"><i class="am-icon-dashboard"></i></router-link>
                 <a class="main-nav-link" href="http://vuejs.org"><img id="vuelogo" src="../assets/logo.png" ></a>
               </nav>
             </div>
