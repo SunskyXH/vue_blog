@@ -94,6 +94,33 @@ app.post('/update_article/:id', function(req, res, next) {
       }
     });
 });
+app.post('/update_tags/:name', function(req, res, next) {
+  var tag = req.body;
+  var collection = _db.collection('tags');
+  if(!tag.name || !tag.color) {
+    res.send({
+      errcode: -1,
+      errmsg: "params missed"
+    });
+    return;
+  }
+  collection.update({'name':req.params.name},{
+    $set:{
+      name: tag.name,
+      color: tag.color
+    }
+  }, function(err, ret) {
+    if(err) {
+      console.error(err);
+      res.status(500).end();
+    } else {
+      res.send({
+        errcode: 0,
+        errmsg: "ok"
+      })
+    }
+  });
+});
 app.get('/get_articles', function (req, res, next) {
   var collection = _db.collection('articles');
   collection.find({}).toArray(function (err, ret) {
@@ -125,8 +152,21 @@ app.get('/get_articles/:id', function (req, res, next) {
 });
 app.get('/get_tags', function(req, res, next) {
   var collection = _db.collection('tags');
-
   collection.find({}).toArray(function (err, ret) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    res.json({
+      errorcode:0,
+      errmsg: "ok",
+      tag: ret
+    });
+  });
+});
+app.get('/get_tags/:name', function (req, res, next) {
+  var collection = _db.collection('tags');
+  collection.find({"name":req.params.name}).toArray(function (err, ret) {
     if (err) {
       console.error(err);
       return;
