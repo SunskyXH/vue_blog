@@ -94,7 +94,7 @@ app.post('/update_article/:id', function(req, res, next) {
       }
     });
 });
-app.post('/update_tags/:name', function(req, res, next) {
+app.post('/update_tag/:name', function(req, res, next) {
   var tag = req.body;
   var collection = _db.collection('tags');
   if(!tag.name || !tag.color) {
@@ -160,7 +160,7 @@ app.get('/get_tags', function(req, res, next) {
     res.json({
       errorcode:0,
       errmsg: "ok",
-      tag: ret
+      tags: ret
     });
   });
 });
@@ -174,7 +174,7 @@ app.get('/get_tags/:name', function (req, res, next) {
     res.json({
       errorcode:0,
       errmsg: "ok",
-      tags:ret
+      tag: ret
     });
   });
 });
