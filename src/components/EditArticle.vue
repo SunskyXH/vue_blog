@@ -33,11 +33,17 @@
     </el-row>
     <br />
     <el-row :gutter="20">
-      <el-col :span="24" >
+      <el-col :span="12" >
         <label>正文:</label>
       </el-col>
-      <el-col :span="18">
-        <el-input type="textarea" v-model="article.content"></el-input>
+      <el-col :span="12" >
+        <label>预览:</label>
+      </el-col>
+      <el-col :span="12">
+        <el-input size="large" type="textarea" v-model="article.content"></el-input>
+      </el-col>
+      <el-col :span="12">
+        <el-input v-html="article.content"></el-input>
       </el-col>
     </el-row>
     <br />

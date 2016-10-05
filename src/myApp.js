@@ -9,7 +9,6 @@ import '../static/css/amazeui.min.css'
 import '../static/css/ionicons.min.css'
 
 import App from './App'
-// import Console from './components/Console'
 import store from './store'
 import router from './router'
 
