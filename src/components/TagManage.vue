@@ -21,6 +21,16 @@
         <br />
       </el-col>
     </section>
+    <el-col :span="6">
+      <el-card class="box-card">
+        <div slot="header" class="clearfix">
+          <span style="line-height: 36px;">新建标签</span>
+        </div>
+        <div class="text item">
+        <el-tag :type="tag.color">{{tag.color}}</el-tag>
+        <router-link to="/console/add/tag/"><el-button style="float: right;" type="primary" icon="edit">新建</el-button></router-link>
+        </div>
+      </el-card>
   </el-row>
 
 </template>

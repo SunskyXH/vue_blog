@@ -15,6 +15,8 @@ import Dashboard from '../components/Dashboard'
 import EditArticle from '../components/EditArticle'
 import EditTag from '../components/EditTag'
 import Archive from '../components/Archive'
+import AddArticle from '../components/AddArticle'
+import AddTag from '../components/AddTag'
 
 export default new Router({
   routes: [
@@ -36,7 +38,9 @@ export default new Router({
         { path: 'article', component: ArticleManage },
         { path: 'article/:id', component: EditArticle },
         { path: 'tag', component: TagManage },
-        { path: 'tag/:name', component: EditTag }
+        { path: 'tag/:name', component: EditTag },
+        { path: 'add/article', component: AddArticle },
+        { path: 'add/tag', component: AddTag }
       ]
     },
 		{ path: '*', redirect: '/' }

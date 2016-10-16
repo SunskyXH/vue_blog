@@ -33,7 +33,7 @@ app.all("*", function (req, res, next) {
     next();
   }
 });
-app.post('/create_article', function(req, res, next) {
+app.post('/add_article', function(req, res, next) {
   var article = req.body;
   var collection = _db.collection('articles');
   if(!article.content || !article.title || !article.date){
@@ -61,6 +61,31 @@ app.post('/create_article', function(req, res, next) {
          errmsg: "ok"
        })
      }
+  });
+});
+app.post('/add_tag', function(req, res, next) {
+  var tag = req.body
+  var collection = _db.collection('tags');
+  if(!tag.name || !tag.color) {
+    res.send({
+      errcode: -1,
+      errmsg: "params missed"
+    });
+    return;
+  }
+  collection.insert({
+      name: tag.name,
+      color: tag.color
+  }, function(err, ret) {
+    if(err) {
+      console.error(err);
+      res.status(500).end();
+    } else {
+      res.send({
+        errcode: 0,
+        errmsg: "ok"
+      })
+    }
   });
 });
 app.post('/update_article/:id', function(req, res, next) {

@@ -23,6 +23,19 @@
         <br />
       </el-col>
     </section>
+    <el-col :span="6">
+      <el-card class="box-card">
+        <div slot="header" class="clearfix">
+        <span style="line-height: 36px;">新建文章</span>
+
+      </div>
+        <div class="text item">
+          <i class="el-icon-date"> <time class="time"> </time></i>
+        <router-link to="/console/add/article/"><el-button style="float: right;" type="primary" icon="edit">新建</el-button></router-link>
+        </div>
+      </el-card>
+      <br />
+    </el-col>
   </el-row>
 
 </template>
