@@ -107,19 +107,25 @@
     components: {
     },
     mounted () {
-      this.$http.get('http://localhost:8888/get_articles')
-        .then(function (ret) {
-          this.blogs = ret.data['articles']
-          setTimeout(() => {
-            store.commit('finishLoading')
-          }, 1000)
-          // store.commit('finishLoading')
-        })
-        .then(function (err) {
-          if (err) {
-            console.log(err)
-          }
-        })
+      this.fetchArticles()
+    },
+    watch: {},
+    methods: {
+      fetchArticles () {
+        this.$http.get('http://localhost:8888/get_articles')
+          .then(function (ret) {
+            this.blogs = ret.data['articles']
+            setTimeout(() => {
+              store.commit('finishLoading')
+            }, 1000)
+            // store.commit('finishLoading')
+          })
+          .then(function (err) {
+            if (err) {
+              console.log(err)
+            }
+          })
+      }
     },
     data () {
       var blogs = this.blogs

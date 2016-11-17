@@ -60,15 +60,7 @@
 <script>
   export default {
     mounted () {
-      this.$http.get('http://localhost:8888/get_tags')
-        .then(function (ret) {
-          this.tags = ret.data['tags']
-        })
-        .then(function (err) {
-          if (err) {
-            console.log(err)
-          }
-        })
+      this.fetchTags()
     },
     data () {
       var tags = this.tags
@@ -77,6 +69,17 @@
       }
     },
     methods: {
+      fetchTags () {
+        this.$http.get('http://localhost:8888/get_tags')
+          .then(function (ret) {
+            this.tags = ret.data['tags']
+          })
+          .then(function (err) {
+            if (err) {
+              console.log(err)
+            }
+          })
+      }
     }
   }
 </script>

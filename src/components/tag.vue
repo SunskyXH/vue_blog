@@ -45,20 +45,28 @@
 <script>
 export default {
   mounted () {
-    this.$http.get('http://localhost:8888/get_articles_tag/' + this.$route.params.name)
-      .then(function (ret) {
-        this.articles = ret.data['articles']
-        if (this.articles.length === 0) {
-          this.hasArticle = false
-        } else {
-          this.hasArticle = true
-        }
-      })
-      .then(function (err) {
-        if (err) {
-          console.log(err)
-        }
-      })
+    this.fetchTags()
+  },
+  watch: {
+    '$route': 'fetchTags'
+  },
+  methods: {
+    fetchTags () {
+      this.$http.get('http://localhost:8888/get_articles_tag/' + this.$route.params.name)
+        .then(function (ret) {
+          this.articles = ret.data['articles']
+          if (this.articles.length === 0) {
+            this.hasArticle = false
+          } else {
+            this.hasArticle = true
+          }
+        })
+        .then(function (err) {
+          if (err) {
+            console.log(err)
+          }
+        })
+    }
   },
   data () {
     var articles = this.articles

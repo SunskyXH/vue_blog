@@ -32,33 +32,42 @@
   </el-row>
 </template>
 <style>
-.console a {
-  color: #0e90d2;
-  text-decoration: none;
-  background: transparent;
-}
+  .console a {
+    color: #0e90d2;
+    text-decoration: none;
+    background: transparent;
+  }
 </style>
 <script>
   export default {
     mounted () {
-      this.$http.get('http://localhost:8888/get_info/tags')
+      this.fetchTagInfo()
+      this.fetchArticleInfo()
+    },
+    watch: {},
+    methods: {
+      fetchTagInfo () {
+        this.$http.get('http://localhost:8888/get_info/tags')
+          .then(function (ret) {
+            this.tagsNumber = ret.data.tagsNumber
+          })
+          .then(function (err) {
+            if (err) {
+              console.log(err)
+            }
+          })
+      },
+      fetchArticleInfo () {
+        this.$http.get('http://localhost:8888/get_info/articles')
         .then(function (ret) {
-          this.tagsNumber = ret.data.tagsNumber
+          this.articlesNumber = ret.data.articlesNumber
         })
         .then(function (err) {
           if (err) {
             console.log(err)
           }
         })
-      this.$http.get('http://localhost:8888/get_info/articles')
-      .then(function (ret) {
-        this.articlesNumber = ret.data.articlesNumber
-      })
-      .then(function (err) {
-        if (err) {
-          console.log(err)
-        }
-      })
+      }
     },
     data () {
       var tagsNumber = this.tagsNumber

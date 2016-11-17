@@ -32,21 +32,24 @@
         </div>
       </el-card>
   </el-row>
-
 </template>
 <style></style>
 <script>
   export default {
     mounted () {
-      this.$http.get('http://localhost:8888/get_tags')
-        .then(function (ret) {
-          this.tags = ret.data['tags']
-        })
-        .then(function (err) {
-          if (err) {
-            console.log(err)
-          }
-        })
+    },
+    methods: {
+      fetchTags () {
+        this.$http.get('http://localhost:8888/get_tags')
+          .then(function (ret) {
+            this.tags = ret.data['tags']
+          })
+          .then(function (err) {
+            if (err) {
+              console.log(err)
+            }
+          })
+      }
     },
     data () {
       var tags = this.tags
@@ -55,5 +58,4 @@
       }
     }
   }
-
 </script>

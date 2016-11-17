@@ -37,27 +37,34 @@
       <br />
     </el-col>
   </el-row>
-
 </template>
 <style>
-.console-link a {
-  color: #0e90d2;
-  text-decoration: none;
-  background: transparent;
-}
+  .console-link a {
+    color: #0e90d2;
+    text-decoration: none;
+    background: transparent;
+  }
 </style>
 <script>
 export default {
   mounted () {
-    this.$http.get('http://localhost:8888/get_articles')
-      .then(function (ret) {
-        this.articles = ret.data['articles']
-      })
-      .then(function (err) {
-        if (err) {
-          console.log(err)
-        }
-      })
+    this.fetchArticles()
+  },
+  watch: {
+    '$route': 'fetchArticles'
+  },
+  methods: {
+    fetchArticles () {
+      this.$http.get('http://localhost:8888/get_articles')
+        .then(function (ret) {
+          this.articles = ret.data['articles']
+        })
+        .then(function (err) {
+          if (err) {
+            console.log(err)
+          }
+        })
+    }
   },
   data () {
     var articles = this.articles

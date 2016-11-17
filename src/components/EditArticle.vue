@@ -68,16 +68,9 @@
 <script>
   export default {
     mounted () {
-      this.$http.get('http://localhost:8888/get_articles/' + this.$route.params.id)
-        .then(function (ret) {
-          this.article = ret.data['article'][0]
-        })
-        .then(function (err) {
-          if (err) {
-            console.log(err)
-          }
-        })
+      this.fetchArticle()
     },
+    watch: {},
     methods: {
       save () {
         this.$http.post('http://localhost:8888/update_article/' + this.$route.params.id, {
@@ -100,6 +93,17 @@
           message: '更改内容未保存',
           type: 'warning'
         })
+      },
+      fetchArticle () {
+        this.$http.get('http://localhost:8888/get_articles/' + this.$route.params.id)
+          .then(function (ret) {
+            this.article = ret.data['article'][0]
+          })
+          .then(function (err) {
+            if (err) {
+              console.log(err)
+            }
+          })
       }
     },
     data () {

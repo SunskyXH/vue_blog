@@ -19,6 +19,7 @@ import AddArticle from '../components/AddArticle'
 import AddTag from '../components/AddTag'
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/', component: Index,
