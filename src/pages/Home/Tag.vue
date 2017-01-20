@@ -1,7 +1,7 @@
 <template>
   <div>
-  <br>
-  <div class="blog-main">
+    <br>
+    <div class="blog-main">
       <div class="blog-post"  v-if="hasArticle">
         <h3>包含标签{{$route.params.name}}的文章如下</h3>
         <hr />
@@ -13,10 +13,10 @@
           <hr />
         </section>
       </div>
-      </div>
-      <div class="blog-post" v-if="!hasArticle">
-        {{$route.params.name}}下暂时没有文章
-      </div>
+    </div>
+    <div class="blog-post" v-if="!hasArticle">
+      {{$route.params.name}}下暂时没有文章
+    </div>
   </div>
 </template>
 <style scoped>

@@ -4,10 +4,10 @@
     <div id="header-outer" class="outer">
       <div id="header-title" class="inner">
         <h1 id="logo-wrap">
-          <route-link to="/" id="logo" v-if="$route.path === '/'" >LIT THE BONFIRE</route-link>
+          <route-link to="/" id="logo">LIT THE BONFIRE</route-link>
         </h1>
         <h2 id="subtitle-wrap">
-          <route-link to="/" id="subtitle" v-if="$route.path === '/'" >The fire fades, and the lord goes without thrones</route-link>
+          <route-link to="/" id="subtitle">The fire fades, and the lord goes without thrones</route-link>
         </h2>
       </div>
       <div id="header-inner" class="inner">
@@ -27,7 +27,7 @@
             <a class="main-nav-link" @click="logout()" v-if="logstatus"><span class="am-icon-sign-out"> </span></a>
           </span>
         </transition-group>
-          
+
           <a class="main-nav-link" @click="showExpand()"><span v-if="!show" class="am-icon-reorder"> </span><span v-if="show" class="am-icon-remove"> </span></a>
           <a class="main-nav-link" href="http://vuejs.org"><img id="vuelogo" src="../assets/logo.png" ></a>
 
@@ -61,7 +61,7 @@
   }
 
 </script>
-<style>
+<style scoped>
   #ico ,#vuelogo {
     width: 20px;
     height: 20px;

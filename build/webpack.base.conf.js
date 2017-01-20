@@ -6,7 +6,8 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './src/client-entry.js'//client-render
+    // app: './src/server-entry.js' //server-side-render
   },
   output: {
     path: config.build.assetsRoot,
@@ -21,7 +22,6 @@ module.exports = {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components')
-
     }
   },
   resolveLoader: {
@@ -78,14 +78,6 @@ module.exports = {
         }
       }
     ],
-    plugins: [
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-        jquery: 'jquery',
-      })
-    ]
   },
   eslint: {
     formatter: require('eslint-friendly-formatter')

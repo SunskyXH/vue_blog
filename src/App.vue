@@ -9,7 +9,6 @@
   .fade-enter, .fade-leave-active {
     opacity: 0;
   }
-
   .expand-enter-active, .expand-leave-active {
     transition: all .5s ease;
   }
