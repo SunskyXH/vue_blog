@@ -102,7 +102,8 @@
         id: 1,
         title: 'title',
         date: '2017-1-20',
-        content: `<p><pre><code>console.log('hello, world')</code></pre></p>`,
+        content: `<p>
+        <pre><code>console.log('Hello, World') //vue-hljs test</code></pre></p>`,
         tags: [{ name: 'tagName', color: 'success' }]
       }
       return {

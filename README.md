@@ -1,9 +1,8 @@
 # bonfire
 
-一个还在填坑中的vue博客模版
-> vue2+vue-resource+vue-router+vuex
+### under construction
 
-> express+mongoDB
+> vue2+vue-resource+vue-router+vuex
 
 ## Build Setup
 

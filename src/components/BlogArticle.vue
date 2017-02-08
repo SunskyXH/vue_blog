@@ -8,7 +8,7 @@
     <p class="blog-post-meta">
       <i class="el-icon-date"> {{article.date}}</i>
     </p>
-    <div v-html="article.content"></div>
+    <div v-html="article.content" v-highlight></div>
     <hr>
     <p>
       <span class="am-icon-tags"> </span> &nbsp;
