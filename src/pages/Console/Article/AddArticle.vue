@@ -74,15 +74,6 @@
   export default {
     methods: {
       save () {
-        this.$http.post('http://localhost:8888/add_article/', {
-          content: this.content,
-          id: this.id,
-          title: this.title,
-          date: this.date,
-          cat1: this.cat1,
-          cat2: this.cat2,
-          tags: null
-        })
         this.$notify({
           title: '编辑成功',
           message: '已保存编辑结果',

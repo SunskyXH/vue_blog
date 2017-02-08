@@ -7,5 +7,6 @@
 </style>
 <script>
 export default {
+  name: 'archive'
 }
 </script>

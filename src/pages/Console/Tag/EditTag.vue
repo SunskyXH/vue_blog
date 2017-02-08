@@ -35,15 +35,12 @@
 </style>
 <script>
   export default {
+    name: 'edit-tag',
     mounted () {
       this.fetchTag()
     },
     methods: {
       save () {
-        this.$http.post('http://localhost:8888/update_tag/' + this.$route.params.name, {
-          name: this.tag.name,
-          color: this.tag.color
-        })
         this.$notify({
           title: '编辑成功',
           message: '已保存编辑结果',
@@ -58,30 +55,26 @@
         })
       },
       fetchTag () {
-        this.$http.get('http://localhost:8888/get_tags/' + this.$route.params.name)
-          .then(function (ret) {
-            this.tag = ret.data['tag'][0]
-          })
-          .then(function (err) {
-            if (err) {
-              console.log(err)
-            }
-          })
+        console.log(`fetch tag`)
       }
     },
     data () {
-      var tag = this.tag
       return {
-        tag: tag,
-        colors: [{
-          value: 'warning'
-        }, {
-          value: 'danger'
-        }, {
-          value: 'success'
-        }, {
-          value: 'primary'
-        }]
+        tag: {
+          name: 'test',
+          color: 'success'
+        },
+        colors: [
+          {
+            value: 'warning'
+          }, {
+            value: 'danger'
+          }, {
+            value: 'success'
+          }, {
+            value: 'primary'
+          }
+        ]
       }
     }
   }

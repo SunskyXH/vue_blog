@@ -5,7 +5,6 @@ Vue.use(Router)
 
 import Index from '../pages/Index'
 import Blog from '../pages/Home/Blog'
-import Article from '../pages/Home/Article'
 import Tag from '../pages/Home/Tag'
 import About from '../pages/About/About'
 import Archive from '../pages/Archive/Archive'
@@ -27,7 +26,6 @@ export default new Router({
         { path: '', component: Blog },
         { path: 'about', component: About },
         { path: 'archive', component: Archive },
-        { path: 'article/:id', component: Article },
         { path: 'tag/:name', component: Tag }
       ]
     },

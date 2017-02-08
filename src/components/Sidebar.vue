@@ -1,22 +1,13 @@
 <template>
-  <div class="blog-sidebar">
+  <aside class="blog-sidebar">
     <br>
-    <div class="sidebar-module sidebar-module-inset">
-      <h4>分类</h4>
-      <p>学习笔记</p>
-      <ol class="list-unstyled">
-        <li><a href="#">Vue</a></li>
-      </ol>
-      <p>开发笔记</p>
-      <ol class="list-unstyled">
-        <li><a href="#">前端性能优化</a></li>
-      </ol>
-    </div>
-    <div class="sidebar-module sidebar-module-inset">
-      <h4>归档</h4>
-      <ol class="list-unstyled">
-        <li><a href="#">没有快滚</a></li>
-      </ol>
+    <div class="sidebar-module sidebar-module-inset" v-for="side in sides">
+      <h4>{{side.title}}</h4>
+      <slot v-for="module in side.modules">
+        <ol class="list-unstyled">
+          <li><a :href="module.herf">{{module.title}}</a></li>
+        </ol>
+      </slot>
     </div>
     <div class="sidebar-module sidebar-module-inset">
       <h4>链接</h4>
@@ -30,10 +21,9 @@
         <slot v-for="tag in tags" >
           <router-link :to="{ path:'/tag/'+tag.name }" ><span :class="'am-badge '+'am-badge-'+tag.color+' am-round'">{{tag.name}}</span></router-link>&nbsp;
         </slot>
-
       </ol>
     </div>
-  </div><!-- /.blog-sidebar -->
+  </aside>
 </template>
 <style scoped>
   /* Sidebar modules for boxing content */
@@ -59,26 +49,47 @@
 </style>
 <script>
   export default {
+    name: 'sidebar',
     mounted () {
       this.fetchTags()
     },
     data () {
-      var tags = this.tags
       return {
-        tags: tags
+        tags: [
+          {
+            name:'test',
+            color:'success'
+          }
+        ],
+        sides: [
+          {
+            title: '分类',
+            modules: [
+              {
+                title: 'Vue',
+                href: '/'
+              },
+              {
+                title: 'webpack',
+                href: '/'
+              }
+            ]
+          },
+          {
+            title: '归档',
+            modules: [
+              {
+                title: '暂无数据',
+                href: '／'
+              }
+            ]
+          }
+        ]
       }
     },
     methods: {
       fetchTags () {
-        this.$http.get('http://localhost:8888/get_tags')
-          .then(function (ret) {
-            this.tags = ret.data['tags']
-          })
-          .then(function (err) {
-            if (err) {
-              console.log(err)
-            }
-          })
+        console.log(`fetch tag`)
       }
     }
   }

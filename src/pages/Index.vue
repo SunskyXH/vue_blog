@@ -40,14 +40,11 @@
   h5, .h5,
   h6, .h6 {
     margin-top: 0;
-    /*font-family: Menlo,"Helvetica Neue", Helvetica, Arial, sans-serif, ;*/
-    /*font-family: Monoca,monospace;*/
     font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
     font-weight: normal;
     color: #333;
     -webkit-font-smoothing: subpixel-antialiased;
     -moz-osx-font-smoothing: auto;
-
   }
   a {
     text-decoration: none;
@@ -55,23 +52,6 @@
   }
   a:hover,a:link,a:focus {
     text-decoration: none;
-  }
-  /*index navbar*/
-  #ico ,#vuelogo {
-    width: 20px;
-    height: 20px;
-  }
-  #banner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("../assets/banner4.png") center #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    z-index: -1;
   }
   code {
     font-family: Menlo, Consolas, Monaco,monospace;
@@ -100,21 +80,6 @@
   }
   hr {
     border: 1px dashed #ddd;
-  }
-  /*transition*/
-  .fade-enter-active, .fade-leave-active {
-    transition: all .2s ease;
-  }
-  .fade-enter, .fade-leave-active {
-    opacity: 0;
-  }
-
-  .expand-enter-active, .expand-leave-active {
-    transition: all .5s ease;
-  }
-  .expand-enter, .expand-leave-active {
-    padding: 0 0;
-    opacity: 0;
   }
 </style>
 <script>

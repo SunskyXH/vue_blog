@@ -35,14 +35,11 @@
 </style>
 <script>
   export default {
+    name: 'add-tag',
     mounted () {
     },
     methods: {
       save () {
-        this.$http.post('http://localhost:8888/add_tag/', {
-          name: this.name,
-          color: this.color
-        })
         this.$notify({
           title: '编辑成功',
           message: '已保存编辑结果',
@@ -59,15 +56,17 @@
     },
     data () {
       return {
-        colors: [{
-          value: 'warning'
-        }, {
-          value: 'danger'
-        }, {
-          value: 'success'
-        }, {
-          value: 'primary'
-        }]
+        colors: [
+          {
+            value: 'warning'
+          }, {
+            value: 'danger'
+          }, {
+            value: 'success'
+          }, {
+            value: 'primary'
+          }
+        ]
       }
     }
   }

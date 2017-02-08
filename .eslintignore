@@ -1,4 +1,4 @@
 build/*.js
 config/*.js
 app.js
-*.js
+src/*

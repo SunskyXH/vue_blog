@@ -19,6 +19,7 @@
 </template>
 <script>
 export default {
+  name: 'console',
   methods: {
     open () {
       this.$notify({
@@ -31,7 +32,7 @@ export default {
 }
 </script>
 <style>
-  .console a {
+   .console-link a {
     color: #0e90d2;
     text-decoration: none;
     background: transparent;

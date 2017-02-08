@@ -7,13 +7,11 @@
       </el-breadcrumb>
       <br />
     </el-col>
-
     <section  v-for="article in articles">
       <el-col :span="6">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
           <span style="line-height: 36px;">{{article.title}}</span>
-
         </div>
           <div class="text item">
           <i class="el-icon-date"> <time class="time"> {{ article.date }}</time></i>
@@ -27,7 +25,6 @@
       <el-card class="box-card">
         <div slot="header" class="clearfix">
         <span style="line-height: 36px;">新建文章</span>
-
       </div>
         <div class="text item">
           <i class="el-icon-date"> <time class="time"> </time></i>
@@ -38,15 +35,11 @@
     </el-col>
   </el-row>
 </template>
-<style>
-  .console-link a {
-    color: #0e90d2;
-    text-decoration: none;
-    background: transparent;
-  }
+<style scoped>
 </style>
 <script>
 export default {
+  name: 'article-manage',
   mounted () {
     this.fetchArticles()
   },
@@ -55,21 +48,18 @@ export default {
   },
   methods: {
     fetchArticles () {
-      this.$http.get('http://localhost:8888/get_articles')
-        .then(function (ret) {
-          this.articles = ret.data['articles']
-        })
-        .then(function (err) {
-          if (err) {
-            console.log(err)
-          }
-        })
+      console.log(`fetch article`)
     }
   },
   data () {
-    var articles = this.articles
     return {
-      articles: articles
+      articles: [
+        {
+          title,
+          date,
+          id: '1'
+        }
+      ]
     }
   }
 }

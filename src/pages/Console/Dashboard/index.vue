@@ -9,7 +9,7 @@
     </el-col>
     <el-col :span="6">
       <el-card :body-style="{ padding: '0px' }">
-        <img src="../assets/TheBody.jpg" class="image">
+        <img src="../../../assets/TheBody.jpg" class="image">
         <div style="padding: 14px;">
           <span>Articles Numbers:{{articlesNumber}}</span>
           <div class="bottom clearfix">
@@ -20,7 +20,7 @@
     </el-col>
     <el-col :span="6">
       <el-card :body-style="{ padding: '0px' }">
-        <img src="../assets/TheMind.jpg" class="image">
+        <img src="../../../assets/TheMind.jpg" class="image">
         <div style="padding: 14px;">
           <span>Tags Numbers:{{tagsNumber}}</span>
           <div class="bottom clearfix">
@@ -31,7 +31,7 @@
     </el-col>
   </el-row>
 </template>
-<style>
+<style scoped>
   .console a {
     color: #0e90d2;
     text-decoration: none;
@@ -40,6 +40,7 @@
 </style>
 <script>
   export default {
+    name: 'dashboard',
     mounted () {
       this.fetchTagInfo()
       this.fetchArticleInfo()
@@ -47,34 +48,16 @@
     watch: {},
     methods: {
       fetchTagInfo () {
-        this.$http.get('http://localhost:8888/get_info/tags')
-          .then(function (ret) {
-            this.tagsNumber = ret.data.tagsNumber
-          })
-          .then(function (err) {
-            if (err) {
-              console.log(err)
-            }
-          })
+        console.log(`fetch tag info`)
       },
       fetchArticleInfo () {
-        this.$http.get('http://localhost:8888/get_info/articles')
-        .then(function (ret) {
-          this.articlesNumber = ret.data.articlesNumber
-        })
-        .then(function (err) {
-          if (err) {
-            console.log(err)
-          }
-        })
+        console.log(`fetch articles info`)
       }
     },
     data () {
-      var tagsNumber = this.tagsNumber
-      var articlesNumber = this.articlesNumber
       return {
-        tagsNumber: tagsNumber,
-        articlesNumber: articlesNumber
+        tagsNumber: '1',
+        articlesNumber: '1'
       }
     }
   }

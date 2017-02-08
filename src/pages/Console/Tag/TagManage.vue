@@ -36,25 +36,23 @@
 <style></style>
 <script>
   export default {
+    name: 'tag-manage',
     mounted () {
+      this.fetchTags()
     },
     methods: {
       fetchTags () {
-        this.$http.get('http://localhost:8888/get_tags')
-          .then(function (ret) {
-            this.tags = ret.data['tags']
-          })
-          .then(function (err) {
-            if (err) {
-              console.log(err)
-            }
-          })
+        console.log(`fetch tags`)
       }
     },
     data () {
-      var tags = this.tags
       return {
-        tags: tags
+        tags: [
+          {
+            color: 'success',
+            name: 'test'
+          }
+        ]
       }
     }
   }

@@ -2,7 +2,7 @@
   <div>
     <br>
     <div class="blog-main" >
-        
+        <blog-article :article='blog'></blog-article>
     </div>
   </div>
 </template>
@@ -84,10 +84,11 @@
   }
 </style>
 <script>
-  import store from '../store/index'
+  import BlogArticle from '../../components/BlogArticle'
   export default {
     name: 'blog',
     components: {
+      BlogArticle
     },
     mounted () {
     },
@@ -95,17 +96,17 @@
     methods: {
     },
     data () {
-      var blogs = [{
+      var blog = {
         cat1: 'cat1',
         cat2: 'cat2',
         id: 1,
         title: 'title',
-        data: '2017-1-20'
-        content: '<p><pre><code>console.log(\'hello, world\')</code></pre></p>',
+        date: '2017-1-20',
+        content: `<p><pre><code>console.log('hello, world')</code></pre></p>`,
         tags: [{ name: 'tagName', color: 'success' }]
-      }]
+      }
       return {
-        blogs: blogs
+        blog: blog
       }
     }
   }

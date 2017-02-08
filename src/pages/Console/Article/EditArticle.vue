@@ -67,20 +67,13 @@
 </style>
 <script>
   export default {
+    name: 'edit-article',
     mounted () {
       this.fetchArticle()
     },
     watch: {},
     methods: {
       save () {
-        this.$http.post('http://localhost:8888/update_article/' + this.$route.params.id, {
-          content: this.article.content,
-          title: this.article.title,
-          date: this.article.date,
-          cat1: this.article.cat1,
-          cat2: this.article.cat2,
-          tags: this.article.tags
-        })
         this.$notify({
           title: '编辑成功',
           message: '已保存编辑结果',
@@ -95,21 +88,25 @@
         })
       },
       fetchArticle () {
-        this.$http.get('http://localhost:8888/get_articles/' + this.$route.params.id)
-          .then(function (ret) {
-            this.article = ret.data['article'][0]
-          })
-          .then(function (err) {
-            if (err) {
-              console.log(err)
-            }
-          })
+        console.log(`fetch article`)
       }
     },
     data () {
-      var article = this.article
       return {
-        article: article
+        article: {
+          title,
+          cat1,
+          cat2,
+          date,
+          content,
+          tags: [
+            {
+              name: 'test',
+              color: 'success'
+            }
+          ],
+          id: '1',
+        }
       }
     }
   }
