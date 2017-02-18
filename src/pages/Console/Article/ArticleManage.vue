@@ -55,8 +55,8 @@ export default {
     return {
       articles: [
         {
-          title,
-          date,
+          title: 'title',
+          date: '2017-2-11',
           id: '1'
         }
       ]

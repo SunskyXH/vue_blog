@@ -52,20 +52,9 @@ export default {
   },
   methods: {
     fetchTags () {
-      this.$http.get('http://localhost:8888/get_articles_tag/' + this.$route.params.name)
-        .then(function (ret) {
-          this.articles = ret.data['articles']
-          if (this.articles.length === 0) {
-            this.hasArticle = false
-          } else {
-            this.hasArticle = true
-          }
-        })
-        .then(function (err) {
-          if (err) {
-            console.log(err)
-          }
-        })
+      console.log(`fetchTags`)
+      var articles = []
+      var hasArticle = false
     }
   },
   data () {
