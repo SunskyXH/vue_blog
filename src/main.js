@@ -10,6 +10,7 @@ import store from './store'
 import router from './router'
 
 Vue.use(Element)
+Vue.use(vueHljs)
 
 const app = new Vue({
   router,
