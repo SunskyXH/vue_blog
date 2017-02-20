@@ -4,16 +4,16 @@
     <div id="banner">
       <div id="homelogo" class="homelogo">
         <div class="homelogoback" style="border: 1px solid #404040">
-          <h1>IT'S ME, TOUCH FISH KING</h1>
-          <h3>LIT THE BONFIRE</h3>
+          <h1 style='color: #000;'>LIT THE BONFIRE</h1>
+          <h3 style='color: #000;'>link the fire, kindle the flame.</h3>
         </div>
       </div>
     </div>
     <div class="navigate">
       <p class="navigater-list">
-        <router-link id="beautifont" class="main-nav-link" to="/">Home</router-link>
-        <router-link id="beautifont" class="main-nav-link" to="/archive">Archive</router-link>
-        <router-link id="beautifont" class="main-nav-link" to="/about">About</router-link>
+        <slot v-for='link in links'>
+          <router-link id="beautifont" class="main-nav-link" :to="link.href">{{link.name}}</router-link>
+        </slot>
         <a id="beautifont" class="main-nav-link" href="https://github.com/SunskyXH">Github</a>
       </p>
     </div>
@@ -30,13 +30,21 @@
             href: '/'
           },
           {
-            name: 'About Me',
-            href: '/about'
+            name: 'Category',
+            href: '/category'
+          },
+          {
+            name: 'Tag',
+            href: '/tag'
           },
           {
             name: 'Archive',
             href: '/archive'
-          }
+          },
+          {
+            name: 'About Me',
+            href: '/about'
+          },
         ]
       }
     },

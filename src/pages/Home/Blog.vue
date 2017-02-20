@@ -5,7 +5,7 @@
       </section>
     </div>
 </template>
-<style scoped>
+<style>
   .outer {
     min-height: 585px;
     max-width: 1040px;
@@ -28,31 +28,29 @@
     data () {
       var blogs = [
         {
-          cat1: 'Front End',
-          cat2: 'Server-side Render',
+          category: { label: 'Front End', href: 'front-end' },
           id: 1,
           title: 'Build Isomorphic JavaScript Application with Server-side Render',
           date: '2017-1-20',
-          content: `<h3>What is Isomorphic JavaScript Application?</h3><p>Let me Google that for you</p><h2>Why we use Isomorphic JavaScript?</h2>
+          content: `<blockquote><p>This article tells about Isomorphic JavaScript Application and the sences we need it</p></blockquote><h3>What is Isomorphic JavaScript Application?</h3><p>Let me Google that for you</p><h2>Why we use Isomorphic JavaScript?</h2>
           <pre><code>console.log('Hello, World') //vue-hljs test
-document.getElementById('foo').innerHTML = 'Hello'</code></pre><blockquote>blockquote test</blockquote>`,
-          tags: [{ name: 'JavaScript' }, { name: 'Isomorphic' }]
+document.getElementById('foo').innerHTML = 'Hello'</code></pre>`,
+          tags: [{ label: 'JavaScript', href: 'javascript' }, { label: 'Isomorphic', href: 'isomorphic' }]
         },
         {
-          cat1: 'Front End',
-          cat2: 'Vue',
+          category: { label: 'Front End', href: 'front-end' },
           id: 2,
-          title: 'Use vue-hljs to Highlight your code in Vue Application!',
+          title: 'Vue使用Highlight.js美化代码解决方案',
           date: '2017-1-20',
-          content: `<p>wao
+          content: `<p>Vue使用Highlight.js美化代码解决方案
           <pre><code>export default class Hello extend React.Component{
-  render(){
+  render() {
     return (
-      <div>Hello World</div>
+      &lt;div>Hello World&lt;/div>
     )
   }
-}</code></pre><blockquote>blockquote test</blockquote></p>`,
-          tags: [{ name: 'JavaScript' }, { name: 'React' }]
+}</code></pre><blockquote>Vue使用Highlight.js美化代码解决方案</blockquote></p>`,
+          tags: [{ label: 'JavaScript', href: 'javascript' }, { label: 'React', href: 'react' }]
         },
       ]
       return {

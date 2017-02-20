@@ -23,15 +23,9 @@
               <td>E-mails:</td>
               <td><a href="#" target="_blank" rel="external">SunskyXH@gmail.com</a>, <a href=#>y445360776@qq.com</a></td>
             </tr>
-            <tr>
-              <td> Skills:</td>
-              <td>
-                /*以上内容其实都不会*/
-              </td>
-            </tr>
           </table>
           <p>
-            爱好摸鱼，擅长摸鱼
+            爱好摸鱼，擅长摸鱼, 立志成为全菜工程师的切图仔
           </p>
           </div>
           <footer class="article-footer">

@@ -5,15 +5,16 @@ var projectRoot = path.resolve(__dirname, '../');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: {
-    app: './src/client-entry.js'//client-render
-    // app: './src/server-entry.js' //server-side-render
-  },
   output: {
     path: config.build.assetsRoot,
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
     filename: '[name].js'
   },
+  entry: {
+    app: './src/client-entry.js'//client-render
+    // app: './src/server-entry.js' //server-side-render
+  },
+  
   resolve: {
     extensions: ['', '.js', '.vue'],
     fallback: [path.join(__dirname, '../node_modules')],

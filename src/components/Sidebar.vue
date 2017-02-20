@@ -19,7 +19,7 @@
       <h4>标签们</h4>
       <ol class="list-unstyled">
         <slot v-for="tag in tags" >
-          <router-link :to="{ path:'/tag/'+tag.name }" ><span :class="'am-badge '+'am-badge-'+tag.color+' am-round'">{{tag.name}}</span></router-link>&nbsp;
+          <router-link :to="{ path:'/tag/'+tag.name }" >{{tag.name}}</router-link>&nbsp;
         </slot>
       </ol>
     </div>

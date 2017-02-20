@@ -7,14 +7,13 @@
         </h1>
       </header>
       <div class="article-meta">
-        <span class="article-date"><i class="el-icon-date"></i>{{article.date}}</span>
-        <span class="article-category"><i class="el-icon-document"></i>{{article.cat1}}</span>
-        <span class="article-category"><i class="el-icon-document"></i>{{article.cat2}}</span>
+        <span class="article-date" ><i class="fa fa-calendar"></i> {{article.date}}</span>
+        <router-link class="article-category" :to="{path:'/category/' + article.category.href}"><i class="fa fa-folder"></i> {{article.category.label}}</router-link>
       </div>
       <div class="article-entry" v-html="article.content" v-highlight></div>
       <footer class="article-footer">
         <slot v-for="tag of article.tags">
-          <router-link class="article-tag-link" :to="{ path:'/tag/'+tag.name }">{{tag.name}}</router-link>&nbsp;
+          <router-link class="article-tag-link" :to="{ path:'/tag/'+tag.href }"><i class="fa fa-tag"></i> {{tag.label}}</router-link>&nbsp;
         </slot>
       </footer>
     </div>
