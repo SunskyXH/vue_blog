@@ -2,7 +2,7 @@
 
 ### under construction
 
-> vue2+vue-resource+vue-router+vuex
+> vue+vue-router+vuex+axios
 
 ## Build Setup
 
@@ -18,13 +18,4 @@ npm run backend
 
 # build for production with minification
 npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
