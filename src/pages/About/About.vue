@@ -1,69 +1,109 @@
 <template>
-  <div>
-    <br>
-    <div class="article-entry blog-post">
-      <h1>关于我</h1>
-      <div style="text-align: center; width: 100%">
-        <div style="width: 120px;height: 70px;border-radius: 60px;overflow: hidden;margin-left:auto;margin-right:auto">
-          <img src="../../assets/photo.jpg">
+  <div class="outer">
+    <div class="article">
+      <div class="article-inner">
+        <header class="article-header-about">
+          <h1 class="thumb">
+            <span class="article-title">关于我</span>
+          </h1>
+        </header>
+        <div class="article-entry" >
+          <div style="text-align: center; width: 100%">
+            <div style="width: 120px;height: 70px;border-radius: 60px;overflow: hidden;margin-left:auto;margin-right:auto">
+              <img src="../../assets/photo.jpg">
+            </div>
+            <h2>香香鸡</h2>
+          </div>
+          <table>
+            <tr>
+              <td>GitHub:</td>
+              <td><a href="https://github.com/SunskyXH" target="_blank" rel="external">SunskyXH</a></td>
+            </tr>
+            <tr>
+              <td>E-mails:</td>
+              <td><a href="#" target="_blank" rel="external">SunskyXH@gmail.com</a>, <a href=#>y445360776@qq.com</a></td>
+            </tr>
+            <tr>
+              <td> Skills:</td>
+              <td>
+                /*以上内容其实都不会*/
+              </td>
+            </tr>
+          </table>
+          <p>
+            爱好摸鱼，擅长摸鱼
+          </p>
+          </div>
+          <footer class="article-footer">
+            <span class="article-tag-link">举报</span>
+          </footer>
         </div>
-        <h2>Sunsky Yang</h2>
-      </div>
-      <table>
-        <tr>
-          <td><i class="am-icon-github am-icon-fw"></i> GitHub:</li></td>
-          <td><a href="https://github.com/SunskyXH" target="_blank" rel="external"><i class="am-icon-github-alt"></i>SunskyXH</a></td>
-        </tr>
-        <tr>
-          <td><i class="am-icon-envelope am-icon-fw"></i> E-mails:</li></td>
-          <td><a href="#" target="_blank" rel="external">SunskyXH@Gmail.com</a>, <a href=#>y445360776@qq.com</a></td>
-        </tr>
-        <tr>
-          <td><i class="am-icon-rocket am-icon-fw"></i> SNS:</td>
-          <td>
-            <a href="https://twitter.com/sanctussunsky" class="am-icon-btn am-secondary am-icon-twitter"></a>
-            <a href="https://www.facebook.com/profile.php?id=100004513845502" class="am-icon-btn am-primary am-icon-facebook"></a>
-            <a href="http://www.weibo.com/2864813750/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" class="am-icon-btn am-warning am-icon-weibo"></a>
-            <a href="https://plus.google.com/117776372494154423647" class="am-icon-btn am-danger am-icon-google-plus"></a>
-            <a href="http://steamcommunity.com/profiles/76561198088762437/" class="am-icon-btn am-primary am-icon-steam"></a>
-          </td>
-        </tr>
-        <tr>
-          <td><i class="am-icon-laptop am-icon-fw"></i> Skills:</td>
-          <td>
-            <i class="icon ion-social-tux"></i>
-            <i class="icon ion-social-html5"></i>
-            <i class="icon ion-social-css3"></i>
-            <i class="icon ion-social-javascript"></i>
-            <i class="icon ion-social-angular"></i>
-            <i class="icon ion-social-nodejs"></i>
-            <i class="icon ion-social-python"></i>
-            <i class="am-icon-database am-icon-fw"></i>
-            <i class="am-icon-git am-icon-fw"></i>
-            /*以上内容其实都不会*/
-          </td>
-        </tr>
-      </table>
-      <p>
-        爱好哲♂学,不是萌豚,一只鶸,正在迈入前端大坑的萌新,希望能变得很厉害<br />
-        最后祝你身体健康
-      </p>
-      <hr>
-      <a href="#">举报</a>
     </div>
   </div>
 </template>
-<style>
-  .blog-post {
-    margin-bottom: 60px;
-    padding: 15px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
+<style scoped>
+ .outer {
+    min-height: 585px;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: - 20px;
   }
-  .article-entry a {
-    color: #20A0FF;
+  .article {
+    color: #555;
+    margin: 50px 0;
+    font-family: Menlo, "open sans", "Helvetica Neue", Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+  }
+  .article-inner {
+    overflow: hidden;
+    border: 0px solid #eef1f8;
+    background: #fff;
+    border-radius: 3px;
+  }
+  .article-header-about {
+    text-align: left;
+  }
+  .article-header .thumb {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .article-title {
     text-decoration: none;
-    background: transparent;
+    font-weight: bold;
+    color: #555;
+    line-height: 1.1em;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -ms-transition: color 0.2s;
+    transition: color 0.2s;
+  }
+  
+  .article-entry {
+    color: #606060;
+    padding: 0 20px;
+  }
+  
+  .article-footer {
+    font-size: 0.85em;
+    line-height: 1.6em;
+    border-top: 1px solid rgba(208,211,248,0.25);
+    padding-top: 1.6em;
+    margin: 0 20px 20px;
+  }
+  .article-tag-link {
+    display: inline-block;
+    font-size: 0.9em;
+    line-height: 1em;
+    padding: 8px 15px;
+    border-radius: 15px;
+    background: #f9fbfd;
+    border: 1px solid #eef1f8;
+    color: #42b983;
+    text-decoration: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 </style>
 <script>

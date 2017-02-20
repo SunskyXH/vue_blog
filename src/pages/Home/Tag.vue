@@ -20,27 +20,6 @@
   </div>
 </template>
 <style scoped>
-  .blog-post {
-    margin-bottom: 10px;
-    padding: 15px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-  }
-  a .blog-post-title {
-    text-decoration: none;
-    background: transparent;
-    color: #20A0FF;
-  }
-  .blog-post-meta {
-    background: transparent;
-    float: right;
-    color: #999;
-  }
-  a {
-    color: #13CE66;
-    text-decoration: none;
-    background: transparent;
-  }
 </style>
 <script>
 export default {

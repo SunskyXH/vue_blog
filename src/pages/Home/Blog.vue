@@ -1,86 +1,16 @@
 <template>
-  <div>
-    <br>
-    <div class="blog-main" >
+    <div id="content" class="outer">
+      <section v-for="blog in blogs">
         <blog-article :article='blog'></blog-article>
+      </section>
     </div>
-  </div>
 </template>
 <style scoped>
-  /*
-   * Blog name and description
-   */
-  .blog-header {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  .blog-title {
-    margin-top: 30px;
-    margin-bottom: 0;
-    font-size: 60px;
-    font-weight: normal;
-
-  }
-  .blog-description {
-    font-size: 20px;
-    color: #999;
-  }
-  /*
-   * Main column and sidebar layout
-   */
-  .blog-main {
-    font-size: 16px;
-    line-height: 1.428;
-  }
-
-  /* Pagination */
-  .pager {
-    margin-bottom: 60px;
-    text-align: left;
-  }
-  .pager > li > a {
-    width: 140px;
-    padding: 10px 20px;
-    text-align: center;
-    border-radius: 30px;
-  }
-  /*
-   * Blog posts
-   */
-  .blog-post {
-    margin-bottom: 60px;
-    padding: 15px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-  }
-  .blog-post-title {
-    margin-bottom: 5px;
-    font-size: 40px;
-  }
-
-  .blog-post-meta {
-    margin-bottom: 20px;
-    color: #999;
-  }
-
-  a {
-    color: #13CE66;
-    text-decoration: none;
-    background: transparent;
-  }
-
-  /*
-   * Footer
-   */
-  .blog-footer {
-    padding: 40px 0;
-    color: #999;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-top: 1px solid #e5e5e5;
-  }
-  .blog-footer p:last-child {
-    margin-bottom: 0;
+  .outer {
+    min-height: 585px;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: - 20px;
   }
 </style>
 <script>
@@ -96,18 +26,37 @@
     methods: {
     },
     data () {
-      var blog = {
-        cat1: 'cat1',
-        cat2: 'cat2',
-        id: 1,
-        title: 'title',
-        date: '2017-1-20',
-        content: `<p>
-        <pre><code>console.log('Hello, World') //vue-hljs test</code></pre></p>`,
-        tags: [{ name: 'tagName', color: 'success' }]
-      }
+      var blogs = [
+        {
+          cat1: 'Front End',
+          cat2: 'Server-side Render',
+          id: 1,
+          title: 'Build Isomorphic JavaScript Application with Server-side Render',
+          date: '2017-1-20',
+          content: `<h3>What is Isomorphic JavaScript Application?</h3><p>Let me Google that for you</p><h2>Why we use Isomorphic JavaScript?</h2>
+          <pre><code>console.log('Hello, World') //vue-hljs test
+document.getElementById('foo').innerHTML = 'Hello'</code></pre><blockquote>blockquote test</blockquote>`,
+          tags: [{ name: 'JavaScript' }, { name: 'Isomorphic' }]
+        },
+        {
+          cat1: 'Front End',
+          cat2: 'Vue',
+          id: 2,
+          title: 'Use vue-hljs to Highlight your code in Vue Application!',
+          date: '2017-1-20',
+          content: `<p>wao
+          <pre><code>export default class Hello extend React.Component{
+  render(){
+    return (
+      <div>Hello World</div>
+    )
+  }
+}</code></pre><blockquote>blockquote test</blockquote></p>`,
+          tags: [{ name: 'JavaScript' }, { name: 'React' }]
+        },
+      ]
       return {
-        blog: blog
+        blogs: blogs
       }
     }
   }

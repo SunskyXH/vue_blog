@@ -1,42 +1,117 @@
 <template>
-  <div class="blog-post">
-    <el-breadcrumb separator="/">
-      <el-breadcrumb-item><router-link to="#"> {{article.cat1}} </router-link></el-breadcrumb-item>
-      <el-breadcrumb-item><router-link to="#"> {{article.cat2}} </router-link></el-breadcrumb-item>
-    </el-breadcrumb>
-    <h2 class="blog-post-title">{{article.title}}</h2>
-    <p class="blog-post-meta">
-      <i class="el-icon-date"> {{article.date}}</i>
-    </p>
-    <div v-html="article.content" v-highlight></div>
-    <hr>
-    <p>
-      <span class="am-icon-tags"> </span> &nbsp;
-      <slot v-for="tag of article.tags">
-        <router-link :to="{ path:'/tag/'+tag.name }"><span :class="'am-badge '+'am-badge-'+tag.color+' am-round'">{{tag.name}}</span></router-link>&nbsp;
-      </slot>
-    <p>
-  </div>
+  <article class="article article-type-post">
+    <div class="article-inner">
+      <header class="article-header">
+        <h1 class="thumb">
+          <router-link class="article-title" :to="{path:'/article/' + article.id}">{{article.title}}</router-link>
+        </h1>
+      </header>
+      <div class="article-meta">
+        <span class="article-date"><i class="el-icon-date"></i>{{article.date}}</span>
+        <span class="article-category"><i class="el-icon-document"></i>{{article.cat1}}</span>
+        <span class="article-category"><i class="el-icon-document"></i>{{article.cat2}}</span>
+      </div>
+      <div class="article-entry" v-html="article.content" v-highlight></div>
+      <footer class="article-footer">
+        <slot v-for="tag of article.tags">
+          <router-link class="article-tag-link" :to="{ path:'/tag/'+tag.name }">{{tag.name}}</router-link>&nbsp;
+        </slot>
+      </footer>
+    </div>
+  </article>
 </template>
-<style scoped>
-  .blog-post {
-    margin-bottom: 60px;
-    padding: 15px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
+<style>
+  .article {
+    color: #555;
+    margin: 50px 0;
+    font-family: Menlo, "open sans", "Helvetica Neue", Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, Microsoft Yahei, sans-serif;
   }
-  .blog-post-title {
-    margin-bottom: 5px;
-    font-size: 40px;
+  .article-inner {
+    overflow: hidden;
+    border: 0px solid #eef1f8;
+    background: #fff;
+    border-radius: 3px;
   }
-  .blog-post-meta {
+  .article-header {
+    text-align: center;
+  }
+  .article-header .thumb {
+    margin-top: 20px;
     margin-bottom: 20px;
-    color: #999;
   }
-  a {
-    color: #13CE66;
+  .article-title {
     text-decoration: none;
-    background: transparent;
+    font-weight: bold;
+    color: #555;
+    line-height: 1.1em;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -ms-transition: color 0.2s;
+    transition: color 0.2s;
+  }
+  .article-meta {
+    text-align: center;
+    font-size: 0.9em;
+    margin: 1.5em 0 1em 0;
+  }
+  .article-date,
+  .article-category {
+    text-decoration: none;
+    /*text-transform: uppercase;*/
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 1em;
+    margin-left: 5px;
+    line-height: 1em;
+    font-weight: bold;
+  }
+  .article-date {
+    text-align: center;
+    font-weight: normal;
+  }
+  .article-category {
+    margin: 0 12px 1em;
+    font-weight: normal;
+  }
+  .article-entry {
+    color: #606060;
+    padding: 0 20px;
+  }
+  .article-entry table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  .article-entry td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  .article-entry p {
+    line-height: 1.6em;
+    margin: 1.6em 0;
+  }
+  .article-footer {
+    font-size: 0.85em;
+    line-height: 1.6em;
+    border-top: 1px solid rgba(208,211,248,0.25);
+    padding-top: 1.6em;
+    margin: 0 20px 20px;
+  }
+  .article-tag-link {
+    display: inline-block;
+    font-size: 0.9em;
+    line-height: 1em;
+    padding: 8px 15px;
+    border-radius: 15px;
+    background: #f9fbfd;
+    border: 1px solid #eef1f8;
+    color: #42b983;
+    text-decoration: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 </style>
 <script>

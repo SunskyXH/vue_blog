@@ -1,0 +1,175 @@
+.fade-enter-active,
+.fade-leave-active {
+transition: all .2s ease;
+}
+.fade-enter, 
+.fade-leave-active {
+opacity: 0;
+}
+.expand-enter-active, 
+.expand-leave-active {
+transition: all .5s ease;
+}
+.expand-enter, 
+.expand-leave-active {
+padding: 0 0;
+opacity: 0;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+article, 
+aside, 
+details, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+main, 
+nav, 
+section, 
+summary {
+    display: block;
+}
+html, 
+body, 
+div, 
+span, 
+applet, 
+object, 
+iframe, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p, 
+blockquote, 
+pre, 
+a, 
+abbr, 
+acronym, 
+address, 
+big, 
+cite, 
+code, 
+del, 
+dfn, 
+em, 
+img, 
+ins, 
+kbd, 
+q, 
+s, 
+samp, 
+small, 
+strike, 
+strong, 
+sub, 
+sup, 
+tt, 
+var, 
+dl, 
+dt, 
+dd, 
+ol, 
+ul, 
+li, 
+fieldset, 
+form, 
+label, 
+legend, 
+table, 
+caption, 
+tbody, 
+tfoot, 
+thead, 
+tr, 
+th, 
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    line-height: 1.428571429;
+    color: #333333;
+    background-color: #ffffff;
+    /*background-image: url(./assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    font-size: 16px;
+    font-family: Operator Mono, Melon, BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;*/
+}
+div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+a {
+    color: #000;
+    text-decoration: none;
+    background: transparent;
+    transition: color,background-color .2s ease;
+}
+a:hover {
+    color: #42b983;
+    text-decoration: none;
+}
+h1 {
+    font-size: 25px;
+}
+h2 {
+    color: #42b983;
+    font-size: 20px;
+}
+h3 {
+    color: #42b983;
+    font-size: 20px;
+}
+h4 {
+    color: #42b983;
+    font-size: 17px;
+}
+td,
+th {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+blockquote {
+    padding: 0.1px 20px;
+    font-size: 1.1em;
+    margin: 1.4em 0px;
+    border-left: 5px solid #42b983;
+    background: rgba(208,211,248,0.15)
+}
+
+code.hljs {
+    border-radius: 5px;
+}
+pre > code {
+    font-family: Operator Mono, Melon, 微软雅黑, Arial, simsun, 宋体;
+}

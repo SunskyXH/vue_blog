@@ -1,25 +1,50 @@
 <template>
-    <router-view></router-view>
+  <div id="bonfire">
+    <div class="warp">
+      <navbar></navbar>
+        <transition name="expand" mode="out-in">
+          <router-view class="view"></router-view>
+        </transition>
+    </div>
+  </div>
 </template>
-<style>
-  /*transition*/
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: all .2s ease;
+<style scoped>
+  #bonfire {
+    height: 100%;
   }
-  .fade-enter, 
-  .fade-leave-active {
-    opacity: 0;
+  #container {
+    position: relative;
+    height: 100%;
   }
-  .expand-enter-active, 
-  .expand-leave-active {
-    transition: all .5s ease;
-  }
-  .expand-enter, 
-  .expand-leave-active {
-    padding: 0 0;
-    opacity: 0;
+  .warp {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+    -ms-transition: 0.2s ease-out;
+    transition: 0.2s ease-out;
+    z-index: 1;
+    background: #eee;
   }
 </style>
 <script>
+  import Navbar from './components/Navbar'
+  import Sidebar from './components/Sidebar'
+  import store from './store/index'
+  export default {
+    name: 'index',
+    components: {
+      Sidebar,
+      Navbar
+    },
+    data () {
+      return {
+      }
+    },
+    methods: {
+    }
+  }
 </script>

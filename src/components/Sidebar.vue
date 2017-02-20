@@ -26,26 +26,6 @@
   </aside>
 </template>
 <style scoped>
-  /* Sidebar modules for boxing content */
-  .sidebar-module {
-    padding: 15px;
-    margin: 0 -15px 15px;
-  }
-  .sidebar-module-inset {
-    padding: 15px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-  }
-  .sidebar-module-inset p:last-child,
-  .sidebar-module-inset ul:last-child,
-  .sidebar-module-inset ol:last-child {
-    margin-bottom: 0;
-  }
-  a {
-    color: #13CE66;
-    text-decoration: none;
-    background: transparent;
-  }
 </style>
 <script>
   export default {
