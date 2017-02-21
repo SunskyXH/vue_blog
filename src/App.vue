@@ -1,10 +1,14 @@
 <template>
   <div id="bonfire">
     <div class="warp">
-      <navbar></navbar>
-        <transition name="expand" mode="out-in">
-          <router-view class="view"></router-view>
-        </transition>
+      <transition name="expand" mode="out-in">
+        <banner v-if="$route.path==='/'"></banner>
+        <navbar v-else></navbar>
+      </transition>
+      <transition name="expand" mode="out-in">
+        <router-view class="view"></router-view>
+      </transition>
+      <footbar></footbar>
     </div>
   </div>
 </template>
@@ -27,18 +31,21 @@
     -ms-transition: 0.2s ease-out;
     transition: 0.2s ease-out;
     z-index: 1;
-    background: #eee;
   }
 </style>
 <script>
+  import Banner from './components/Banner'
   import Navbar from './components/Navbar'
+  import Footbar from './components/Footbar'
   import Sidebar from './components/Sidebar'
   import store from './store/index'
   export default {
     name: 'index',
     components: {
       Sidebar,
-      Navbar
+      Banner,
+      Navbar,
+      Footbar
     },
     data () {
       return {
